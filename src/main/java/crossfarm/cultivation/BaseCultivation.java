@@ -11,4 +11,7 @@ public abstract class BaseCultivation {
      * @return
      */
     public abstract double cost();
+
+    // 时间经过的反应(用 STATE MACHINE 描述时间经过动物会发生啥？
+    public abstract void tick();
 }

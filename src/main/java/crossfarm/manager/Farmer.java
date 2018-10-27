@@ -5,4 +5,14 @@
 package crossfarm.manager;
 
 public class Farmer {
+    private double money;
+
+    private Farmer() {
+        //
+        this.money = 0;
+    }
+
+    public static Farmer getInstance() {
+        throw new RuntimeException("Not Implemented.");
+    }
 }
