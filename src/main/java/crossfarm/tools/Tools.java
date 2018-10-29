@@ -1,5 +1,5 @@
 package crossfarm.tools;
 
 public enum Tools {
-    Cloth,
+    Cloth, Weapon,
 }

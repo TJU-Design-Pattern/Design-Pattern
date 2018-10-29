@@ -7,7 +7,6 @@ import crossfarm.cultivation.BaseCultivation;
 
 public class Ranch extends BaseLand {
 
-
     public void addCultivation(BaseCultivation cultivation) {
         throw new RuntimeException("Not implemented");
     }

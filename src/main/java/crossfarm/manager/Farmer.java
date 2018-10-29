@@ -5,14 +5,25 @@
 package crossfarm.manager;
 
 public class Farmer {
-    private double money;
+    //private double money;
+    private boolean has_axe;
+    private boolean has_shovel;
 
-    private Farmer() {
+    // init our only owner
+    //private static Farmer instance = new Farmer();
+
+    public Farmer() {
         //
-        this.money = 0;
+        //this.money = 0;
+        this.has_axe = false;
+        this.has_shovel = false;
     }
 
-    public static Farmer getInstance() {
-        throw new RuntimeException("Not Implemented.");
+    public void setHas_axe(boolean has_axe) {
+        this.has_axe = has_axe;
+    }
+
+    public void setHas_shovel(boolean has_shovel){
+        this.has_shovel = has_shovel;
     }
 }
