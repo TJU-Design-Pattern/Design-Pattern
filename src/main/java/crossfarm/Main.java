@@ -1,5 +1,7 @@
 package crossfarm;
 
+import crossfarm.cultivation.animals.BaseAnimal;
+
 /**
  * Hello world!
  *

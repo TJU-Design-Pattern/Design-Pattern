@@ -1,6 +1,7 @@
 package crossfarm.cultivation.animals;
 
-import crossfarm.actions.sound.MakeSound;
+import crossfarm.actions.AnimalAction;
+import crossfarm.actions.MakeSound;
 import crossfarm.cultivation.BaseCultivation;
 
 public abstract class BaseAnimal extends BaseCultivation {
@@ -9,5 +10,7 @@ public abstract class BaseAnimal extends BaseCultivation {
     public void makeSound() {
         soundMaker.makeSound();
     }
+
+    public static void behave(AnimalAction action) { action.doAction(); }
 
 }
