@@ -11,6 +11,22 @@ public class Cat extends BaseAnimal {
     }
     public void tick() { return; }
 
+    public void timeChange(int currentTime) {
+        if(lastSupplyTime > currentTime) {
+            if(currentTime + 24 -lastSupplyTime > 5) {
+                // 猫饿了
+                state.getHungry(this);
+            }
+        }
+        else {
+            if(currentTime - lastSupplyTime > 5) {
+                // 猫饿了
+                state.getHungry(this);
+                System.out.println("猫饿了");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Cat c = new Cat();
         System.out.println(c.cost());
@@ -20,5 +36,6 @@ public class Cat extends BaseAnimal {
 
         behave(new CatSound());
         behave(new CatEat());
+
     }
 }
