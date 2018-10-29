@@ -9,4 +9,5 @@ public abstract class BaseAnimal extends BaseCultivation {
     public void makeSound() {
         soundMaker.makeSound();
     }
+
 }
