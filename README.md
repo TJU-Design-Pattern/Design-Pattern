@@ -22,7 +22,7 @@ Design Patterns
 - [x] Decorator
 - [x] Facade
 - [x] Flyweight
-- [ ] Proxy
+- [x] Proxy
 
 **Behavioral Patterns**
 
@@ -32,7 +32,7 @@ Design Patterns
 - [ ] Interpreter
 - [ ] Iterator
 - [x] Mediator
-- [ ] Memento
+- [x] Memento
 - [x] Observer
 - [x] State
 - [x] Strategy

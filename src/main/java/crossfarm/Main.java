@@ -24,6 +24,8 @@ public class Main
     {
         System.out.println( "Hello World!" );
 
+        Farm farm = Farm.getInstance();
+        Memento memento = farm.createMemento();
         // Command test
         Owner owner = Owner.getInstance();
         System.out.println(owner.getMoney());
@@ -47,6 +49,8 @@ public class Main
         MoneyGetter moneyGetter = new GetMoneyProxy(owner);
         double money = moneyGetter.getMoney();
         System.out.println("Get " + money);
+
+        memento.updateState(farm);
     }
 
 }

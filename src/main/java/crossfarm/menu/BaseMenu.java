@@ -3,5 +3,7 @@
  */
 package crossfarm.menu;
 
-public abstract class BaseMenu {
+import java.io.Serializable;
+
+public abstract class BaseMenu implements Serializable {
 }
