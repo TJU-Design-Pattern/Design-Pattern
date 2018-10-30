@@ -1,5 +1,4 @@
 package crossfarm.decorators.farmers;
-import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.manager.Farmer;
 import crossfarm.weapon.BaseWeapon;
 

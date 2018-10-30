@@ -4,5 +4,11 @@
  */
 package crossfarm.cultivation.plants;
 
-public class BasePlant {
+import crossfarm.cultivation.BaseCultivation;
+import crossfarm.state.State;
+
+public abstract class BasePlant extends BaseCultivation {
+
+    public void changeState(State state) {}
+    public void getFed(int currentTime) {}
 }
