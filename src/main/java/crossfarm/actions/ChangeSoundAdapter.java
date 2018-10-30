@@ -9,7 +9,4 @@ public class ChangeSoundAdapter extends DuckSound implements MakeSound{
         System.out.println("gun ya");
     }
 
-    void MakeSound(){
-        System.out.println("gun ya");
-    }
 }
