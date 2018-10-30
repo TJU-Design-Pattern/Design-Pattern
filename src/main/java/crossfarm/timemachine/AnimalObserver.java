@@ -22,7 +22,7 @@ public class AnimalObserver extends Observer{
             BaseAnimal animal = animal_menu.getAnimal(i);
             animal.timeChange(this.time_counter.current_time);
             //if the animal is not hungury
-            if(animal.state == FullState.getInstance()){
+            if(!animal.isHungry()){
             }
             else{
                 /*
