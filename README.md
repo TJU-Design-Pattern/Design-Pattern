@@ -8,7 +8,7 @@ A farm management framework with some classical design patterns implemented in J
 Design Patterns
 --------
 **Creational Patterns**
-- [] Abstract Factory
+- [ ] Abstract Factory
 - [] Builder
 - [] Factory Method
 - [] Prototype
@@ -26,13 +26,13 @@ Design Patterns
 **Behavioral Patterns**
 - [] Chain of Responsibility
 - [] Command
-- [ ] Interpreter
-- [ ] Iterator
+- [] Interpreter
+- [] Iterator
 - [] Mediator
 - [] Memento
 - [] Observer
-- [ ] State
-- [ ] Strategy
+- [] State
+- [] Strategy
 - [] Template Method
 - [] Visitor
 
