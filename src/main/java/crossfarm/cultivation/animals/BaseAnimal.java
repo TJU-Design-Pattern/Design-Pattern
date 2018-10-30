@@ -1,5 +1,6 @@
 package crossfarm.cultivation.animals;
 
+import crossfarm.Farm;
 import crossfarm.actions.AnimalAction;
 import crossfarm.actions.MakeSound;
 import crossfarm.cultivation.BaseCultivation;
@@ -31,4 +32,17 @@ public abstract class BaseAnimal extends BaseCultivation implements Context {
         this.state = FullState.getInstance();
         lastSupplyTime = currentTime;
     }
+
+    public void doSell(){
+        if(this.isSaled){
+            System.out.println("This animal is already saled!");
+        }
+        else{
+            this.isSaled = true;
+            Farm instance = Farm.getInstance();
+            instance.animalMenu.removeAnimal(this);
+            System.out.println("Sale finished!");
+        }
+    }
+
 }

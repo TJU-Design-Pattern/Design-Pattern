@@ -9,4 +9,12 @@ public class Crop extends BasePlant{
     public void doSell(){
 
     }
+
+    public void tick(){
+
+    }
+
+    public double cost(){
+        return 40;
+    }
 }
