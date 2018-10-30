@@ -16,4 +16,12 @@ public class Dressed extends BaseAnimalDecorator {
 //      穿了衣服加50元
         return this.animal.cost() + 50;
     }
+
+    public void doSell(){
+
+    }
+
+    public void tick(){
+
+    }
 }

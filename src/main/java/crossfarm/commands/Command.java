@@ -3,5 +3,6 @@
  */
 package crossfarm.commands;
 
-public abstract class BaseCommand {
+public interface Command {
+    public abstract void execute();
 }

@@ -10,7 +10,10 @@ public abstract class BaseCultivation {
      * 这个玩意能卖多少钱
      * @return
      */
+    public boolean isSaled;
+
     public abstract double cost();
+    public abstract void doSell();
 
     // 时间经过的反应(用 STATE MACHINE 描述时间经过动物会发生啥？
     public abstract void tick();

@@ -2,6 +2,8 @@ package crossfarm.cultivation.animals;
 
 import crossfarm.actions.sound.MakeSound;
 import crossfarm.cultivation.BaseCultivation;
+import crossfarm.farmland.Ranch;
+import crossfarm.menu.AnimalMenu;
 
 public abstract class BaseAnimal extends BaseCultivation {
     MakeSound soundMaker;
