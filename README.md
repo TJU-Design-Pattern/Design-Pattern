@@ -30,7 +30,7 @@ Design Patterns
 
 - [x] Command
 - [ ] Interpreter
-- [ ] Iterator
+- [x] Iterator
 - [x] Mediator
 - [ ] Memento
 - [x] Observer
