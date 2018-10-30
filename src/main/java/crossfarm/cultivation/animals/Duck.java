@@ -7,9 +7,11 @@ import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
 import crossfarm.state.FullState;
 
+
 public class Duck extends BaseAnimal {
     public Duck() { 
         this.soundAdapter = new ChangeSoundAdapter();
+        this.isMature = false;
      }
     private ChangeSoundAdapter soundAdapter;
     public double cost() {
@@ -35,6 +37,9 @@ public class Duck extends BaseAnimal {
             else {
                 state.gainExperience(this);
             }
+        }
+        if(this.experience >= 96){
+            this.isMature = true;
         }
     }
 

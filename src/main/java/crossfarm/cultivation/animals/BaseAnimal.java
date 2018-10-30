@@ -31,6 +31,10 @@ public abstract class BaseAnimal extends BaseCultivation{
         lastSupplyTime = currentTime;
     }
 
+    public boolean isHungry(){
+        return this.state == HungryState.getInstance();
+    }
+
     public void doSell(){
         if(this.isSaled){
             System.out.println("This animal is already saled!");

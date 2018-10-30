@@ -4,11 +4,13 @@ import crossfarm.Farm;
 import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
 import crossfarm.decorators.animals.Dressed;
+import crossfarm.state.FullState;
 
 public class Cat extends BaseAnimal {
     public Cat() {
         this.soundMaker = new CatSound();
         this.isSaled = false;
+        this.isMature = false;
     }
     public double cost() {
         return 50;
@@ -33,6 +35,9 @@ public class Cat extends BaseAnimal {
             else {
                 state.gainExperience(this);
             }
+        }
+        if(this.experience >= 144){
+            this.isMature = true;
         }
     }
 
