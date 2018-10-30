@@ -9,6 +9,7 @@ import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.BaseMenu;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ public class AnimalManager implements Mediator {
     private Set<BaseAnimal> _starved_animals;
 
     public AnimalManager(Farm farm) {
+        _starved_animals = new HashSet<BaseAnimal>();
         System.out.println("[Init] AnimalManager starts working!");
         createColleagues(farm);
     }
@@ -29,10 +31,15 @@ public class AnimalManager implements Mediator {
         this._farm = farm;
     }
 
+    public Set<BaseAnimal> get_starved_animals(){
+        return _starved_animals;
+    }
+
     public void colleagueChanged() {
         Iterator<BaseCultivation> animal_it = _animal_menu.cultivations.iterator();
         while(animal_it.hasNext()){
             BaseAnimal animal = (BaseAnimal) animal_it.next();
+
             if(animal.isHungry()){
                 _starved_animals.add(animal);
             }

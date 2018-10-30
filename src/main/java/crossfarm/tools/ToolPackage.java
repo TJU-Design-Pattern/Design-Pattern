@@ -18,6 +18,7 @@ public class ToolPackage {
         PackageBuilder packageBuilder = new PackageBuilder();
         Director director = new Director(packageBuilder);
         director.constructor(this.base_tool);
+        my_bags = new ArrayList<ToolPackage>();
     }
 
     public void addTool(BaseTool base_tool){
@@ -25,6 +26,7 @@ public class ToolPackage {
     }
 
     public void addPackage(ToolPackage tool_package){
+        System.out.println("Succeed in putting toolpackage into current toolpackage");
         this.my_bags.add(tool_package);
     }
 }

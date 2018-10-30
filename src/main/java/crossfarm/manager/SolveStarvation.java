@@ -31,6 +31,7 @@ public abstract class SolveStarvation {
 
     protected void done(Starvation starvation){
         System.out.println(starvation + "is solved by " + this);
+        _farm.getAnimal_manager().get_starved_animals().clear();
     }
 
     protected void fail(Starvation starvation){

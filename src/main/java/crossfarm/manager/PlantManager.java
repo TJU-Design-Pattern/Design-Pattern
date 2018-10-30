@@ -6,6 +6,7 @@ import crossfarm.menu.BaseMenu;
 import crossfarm.menu.PlantMenu;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ public class PlantManager implements Mediator{
     private Set<BasePlant> _mature_plant;
 
     public PlantManager(Farm farm) {
+        _mature_plant = new HashSet<BasePlant>();
         System.out.println("[Init] PlantManager starts working!");
         createColleagues(farm);
     }

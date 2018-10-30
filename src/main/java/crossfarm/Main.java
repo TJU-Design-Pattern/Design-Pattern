@@ -48,15 +48,21 @@ public class Main
 
         TimeCounter time_counter = new TimeCounter();
         AnimalObserver animal_observer = new AnimalObserver(time_counter);
-        for(int i=0;i<5;i++){
+        for(int i=0;i<10;i++){
             time_counter.updateTime();
         }
-
-        for(int i=0;i<animal_menu.size();i++){
-            BaseAnimal animal = animal_menu.getAnimal(i);
-            System.out.println(animal.getName());
-        }
         System.out.println("end for observer");
+        System.out.println("");
+
+        System.out.println("");
+        System.out.println("test for toolPackage");
+        ToolPackage tool_package = new ToolPackage();
+        BaseFactory weapon_factory = Farm.getInstance().weapon_factory;
+        BaseWeapon axe = weapon_factory.getWeapon("Axe");
+        tool_package.addTool(axe);
+        ToolPackage second_tool_package = new ToolPackage();
+        tool_package.addPackage(second_tool_package);
+        System.out.println("end test for toolpackage");
         System.out.println("");
 
         // Decorator test
