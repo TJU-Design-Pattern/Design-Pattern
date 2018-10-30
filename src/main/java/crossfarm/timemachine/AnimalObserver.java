@@ -25,16 +25,11 @@ public class AnimalObserver extends Observer{
             if(!animal.isHungry()){
             }
             else{
-                /*
                 int food_remains = global_farm.foodCourt;
-                if(animal.eat_quantity <= food_remains){
-                    global_farm.foodCourt -= animal.eat_quantity;
-                    animal.state = HungryState.getInstance();
+                if(animal.appetite <= food_remains){
+                    global_farm.foodCourt -= animal.appetite;
+                    animal.getFed(this.time_counter.current_time);
                 }
-                else{
-                    notify mediator;
-                }
-                */
             }
         }
     }

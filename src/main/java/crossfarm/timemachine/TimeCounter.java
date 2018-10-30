@@ -16,6 +16,7 @@ public class TimeCounter {
 
     public int updateTime(){
         this.current_time += 1;
+        this.notifyAllObservers();
         return this.current_time;
     }
 

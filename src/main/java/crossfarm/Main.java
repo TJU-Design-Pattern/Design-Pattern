@@ -12,6 +12,8 @@ import crossfarm.manager.*;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.Iterator;
 import crossfarm.menu.PlantMenu;
+import crossfarm.timemachine.AnimalObserver;
+import crossfarm.timemachine.TimeCounter;
 import crossfarm.tools.ToolPackage;
 import crossfarm.weapon.BaseWeapon;
 
@@ -40,6 +42,22 @@ public class Main
         System.out.println(Farm.getInstance().animalMenu.size());
         Farm.getInstance().animalMenu.getAnimal(0).makeSound();
 
+        System.out.println("");
+        System.out.println("test for observer");
+        AnimalMenu animal_menu = Farm.getInstance().animalMenu;
+
+        TimeCounter time_counter = new TimeCounter();
+        AnimalObserver animal_observer = new AnimalObserver(time_counter);
+        for(int i=0;i<5;i++){
+            time_counter.updateTime();
+        }
+
+        for(int i=0;i<animal_menu.size();i++){
+            BaseAnimal animal = animal_menu.getAnimal(i);
+            System.out.println(animal.getName());
+        }
+        System.out.println("end for observer");
+        System.out.println("");
 
         // Decorator test
         BaseAnimal cat = new Cat(farm.getAnimal_manager());
