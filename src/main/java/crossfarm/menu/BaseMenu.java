@@ -10,4 +10,5 @@ import java.util.List;
 
 public abstract class BaseMenu implements Serializable {
     public List<BaseCultivation> cultivations;
+    public abstract Iterator iterator();
 }
