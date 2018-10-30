@@ -1,8 +1,8 @@
 package crossfarm;
 
 import crossfarm.cultivation.animals.BaseAnimal;
-import crossfarm.farmland.Ranch;
 import crossfarm.manager.Farmer;
+import crossfarm.manager.Owner;
 
 /**
  * Hello world!
@@ -14,14 +14,12 @@ public class Main
     {
         System.out.println( "Hello World!" );
 
-        Farmer farmer = new Farmer();
-
-        System.out.println(Ranch.getInstance().catMenu.size());
-        farmer.purchase("cat",3);
-        System.out.println(Ranch.getInstance().catMenu.size());
-        farmer.sell(Ranch.getInstance().catMenu.getAnimal(0));
-        System.out.println(Ranch.getInstance().catMenu.size());
-        Ranch.getInstance().catMenu.getAnimal(0).makeSound();
+        System.out.println(Farm.getInstance().animalMenu.size());
+        Owner.getInstance().purchase("cat",3);
+        System.out.println(Farm.getInstance().animalMenu.size());
+        Owner.getInstance().sell(Farm.getInstance().animalMenu.getAnimal(0));
+        System.out.println(Farm.getInstance().animalMenu.size());
+        Farm.getInstance().animalMenu.getAnimal(0).makeSound();
     }
 
 }

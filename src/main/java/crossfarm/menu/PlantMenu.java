@@ -5,44 +5,44 @@ import crossfarm.cultivation.plants.BasePlant;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlantMenu<T extends BasePlant> extends BaseMenu {
-    private List<T> plants;
+public class PlantMenu extends BaseMenu {
+    private List<BasePlant> Plants;
 
     public PlantMenu(){
-        plants = new ArrayList<T>();
+        Plants = new ArrayList<BasePlant>();
     }
 
     /**
-     * Adds an plant into the group
-     * @param plant The plant to be added
+     * Adds an Plant into the group
+     * @param Plant The Plant to be added
      */
-    public void addPlant(T plant){
-        plants.add(plant);
+    public void addPlant(BasePlant Plant){
+        Plants.add(Plant);
     }
 
     /**
-     * Return the plant in the plant list by index
-     * @param index The index of the plant
-     * @return The plant in the list
+     * Return the Plant in the Plant list by index
+     * @param index The index of the Plant
+     * @return The Plant in the list
      */
-    public T getplant(int index){
-        return plants.get(index);
+    public BasePlant getPlant(int index){
+        return Plants.get(index);
     }
 
     /**
-     * Remove the plant in the plant list by index
-     * @param index The index of the plant
+     * Remove the Plant in the Plant list by index
+     * @param index The index of the Plant
      */
-    public void removeplant(int index){
-        plants.remove(index);
+    public void removePlant(int index){
+        Plants.remove(index);
     }
 
     /**
-     * Remove the plant in the plant list
-     * @param plant The plant you want to remove
+     * Remove the Plant in the Plant list
+     * @param Plant The Plant you want to remove
      */
-    public void removeplant(T plant){
-        plants.remove(plant);
+    public void removePlant(BasePlant Plant){
+        Plants.remove(Plant);
     }
 
     /**
@@ -50,7 +50,7 @@ public class PlantMenu<T extends BasePlant> extends BaseMenu {
      * @return The size of the group
      */
     public int size(){
-        return plants.size();
+        return Plants.size();
     }
 
 }

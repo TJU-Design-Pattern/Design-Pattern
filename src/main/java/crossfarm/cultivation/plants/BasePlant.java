@@ -4,5 +4,20 @@
  */
 package crossfarm.cultivation.plants;
 
-public class BasePlant {
+import crossfarm.Farm;
+import crossfarm.cultivation.BaseCultivation;
+
+public abstract class BasePlant extends BaseCultivation {
+
+    public void doSell(){
+        if(this.isSaled){
+            System.out.println("This plant is already saled!");
+        }
+        else{
+            this.isSaled = true;
+            Farm instance = Farm.getInstance();
+            instance.plantMenu.removePlant(this);
+            System.out.println("Sale finished!");
+        }
+    }
 }
