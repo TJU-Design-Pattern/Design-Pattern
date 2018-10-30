@@ -8,33 +8,36 @@ A farm management framework with some classical design patterns implemented in J
 Design Patterns
 --------
 **Creational Patterns**
-- [ ] Abstract Factory
-- [] Builder
-- [] Factory Method
-- [] Prototype
-- [] Singleton
+- [x] Abstract Factory
+- [ ] Builder
+- [x] Factory Method
+- [ ] Prototype
+- [x] Singleton
 
 **Structural Patterns**
-- [] Adapter
-- [] Bridge
-- [] Composite
-- [] Decorator
-- [] Facade
-- [] Flyweight
-- [] Proxy
+
+- [ ] Adapter
+- [ ] Bridge
+- [ ] Composite
+- [ ] Decorator
+- [ ] Facade
+- [x] Flyweight
+- [ ] Proxy
 
 **Behavioral Patterns**
-- [] Chain of Responsibility
-- [] Command
-- [] Interpreter
-- [] Iterator
-- [] Mediator
-- [] Memento
-- [] Observer
-- [] State
-- [] Strategy
-- [] Template Method
-- [] Visitor
+
+- [x] Chain of Responsibility
+
+- [x] Command
+- [ ] Interpreter
+- [ ] Iterator
+- [x] Mediator
+- [ ] Memento
+- [x] Observer
+- [x] State
+- [x] Strategy
+- [ ] Template Method
+- [ ] Visitor
 
 **Other Patterns**
 - [x] Null Object
@@ -42,11 +45,11 @@ Design Patterns
 Team
 --------
 - 宋天佑 ([@MrNickell](https://github.com/MrNickell/))
-- 张文喆 ([@pancerZH](https://github.com/pancerZH/))
+- 张文喆 ([@pancerZH](https://github.com/pancerZH/))
 - 李坤 ([@Moonlor](https://github.com/Moonlor/))
 - 李向真 ([@zhenzhenz](https://github.com/zhenzhenz))
 - 陈泽徽 ([@zehuichen123](https://github.com/DerekDick/))
-- 杨丁豪 ([@DinghowYang](https://github.com/DinghowYang/))
+- 杨丁豪 ([@DinghowYang](https://github.com/DinghowYang/))
 - 孙韬 ([@wzes](https://github.com/wzes/))
 - 付旭炜 ([@MWish](https://github.com/MWish/))
 - 殷在浩 ([@chloe](https://github.com/chloe/))

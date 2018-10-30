@@ -1,5 +1,6 @@
 package crossfarm.cultivation.animals;
 
+import crossfarm.Farm;
 import crossfarm.actions.AnimalAction;
 import crossfarm.actions.MakeSound;
 import crossfarm.cultivation.BaseCultivation;
@@ -10,11 +11,13 @@ import crossfarm.state.FullState;
 import crossfarm.state.HungryState;
 import crossfarm.state.State;
 
+<<<<<<< HEAD
 public abstract class BaseAnimal extends BaseCultivation implements Context{
+=======
+public abstract class BaseAnimal extends BaseCultivation{
+>>>>>>> 3852a20045e3cfeacfb3d2687e3b70cb66a4ca2e
     MakeSound soundMaker;
-    protected State state = HungryState.getInstance();
     public int lastSupplyTime = 0;
-    public int experience = 0;
 
     public void makeSound() {
         soundMaker.makeSound();
@@ -31,4 +34,17 @@ public abstract class BaseAnimal extends BaseCultivation implements Context{
         this.state = FullState.getInstance();
         lastSupplyTime = currentTime;
     }
+
+    public void doSell(){
+        if(this.isSaled){
+            System.out.println("This animal is already saled!");
+        }
+        else{
+            this.isSaled = true;
+            Farm instance = Farm.getInstance();
+            instance.animalMenu.removeAnimal(this);
+            System.out.println("Sale finished!");
+        }
+    }
+
 }

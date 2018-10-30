@@ -1,5 +1,6 @@
 package crossfarm.menu;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.animals.Duck;
@@ -7,18 +8,18 @@ import crossfarm.cultivation.animals.Duck;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnimalMenu<T extends BaseAnimal> extends BaseMenu {
-    private List<T> animals;
+public class AnimalMenu extends BaseMenu {
+    private List<BaseAnimal> animals;
 
     public AnimalMenu(){
-        animals = new ArrayList<T>();
+        animals = new ArrayList<BaseAnimal>();
     }
 
     /**
      * Adds an animal into the group
      * @param animal The animal to be added
      */
-    public void addAnimal(T animal){
+    public void addAnimal(BaseAnimal animal){
         animals.add(animal);
     }
 
@@ -27,7 +28,7 @@ public class AnimalMenu<T extends BaseAnimal> extends BaseMenu {
      * @param index The index of the animal
      * @return The animal in the list
      */
-    public T getAnimal(int index){
+    public BaseAnimal getAnimal(int index){
         return animals.get(index);
     }
 
@@ -43,7 +44,7 @@ public class AnimalMenu<T extends BaseAnimal> extends BaseMenu {
      * Remove the animal in the animal list
      * @param animal The animal you want to remove
      */
-    public void removeAnimal(T animal){
+    public void removeAnimal(BaseAnimal animal){
         animals.remove(animal);
     }
 

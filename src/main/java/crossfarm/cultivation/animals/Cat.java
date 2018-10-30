@@ -1,10 +1,9 @@
 package crossfarm.cultivation.animals;
 
+import crossfarm.Farm;
 import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
 import crossfarm.decorators.animals.Dressed;
-import crossfarm.farmland.Ranch;
-import crossfarm.state.FullState;
 
 public class Cat extends BaseAnimal {
     public Cat() {
@@ -21,12 +20,18 @@ public class Cat extends BaseAnimal {
                 // 猫饿了
                 state.getHungry(this);
             }
+            else {
+                state.gainExperience(this);
+            }
         }
         else {
             if(currentTime - lastSupplyTime > 5) {
                 // 猫饿了
                 state.getHungry(this);
                 System.out.println("猫饿了");
+            }
+            else {
+                state.gainExperience(this);
             }
         }
     }
@@ -48,18 +53,6 @@ public class Cat extends BaseAnimal {
 
         behave(new CatSound());
         c.getFed(10);
-    }
-
-    public void doSell(){
-        if(this.isSaled){
-            System.out.println("This animal is already saled!");
-        }
-        else{
-            this.isSaled = true;
-            Ranch instance = Ranch.getInstance();
-            instance.catMenu.removeAnimal(this);
-            System.out.println("Sale finished!");
-        }
     }
 
     public void tick(){

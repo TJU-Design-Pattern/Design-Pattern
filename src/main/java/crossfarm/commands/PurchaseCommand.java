@@ -1,7 +1,7 @@
 package crossfarm.commands;
 
+import crossfarm.Farm;
 import crossfarm.cultivation.animals.Cat;
-import crossfarm.farmland.Ranch;
 
 public class PurchaseCommand implements Command{
     String kind;
@@ -12,10 +12,10 @@ public class PurchaseCommand implements Command{
         this.number = number;
     }
     public void execute(){
-        Ranch instance = Ranch.getInstance();
+        Farm instance = Farm.getInstance();
         if(kind == "cat") {
             for (int i = 0; i < number; i++) {
-                instance.catMenu.addAnimal(new Cat());
+                instance.animalMenu.addAnimal(new Cat());
             }
         }
     }
