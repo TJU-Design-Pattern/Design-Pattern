@@ -22,6 +22,7 @@ public class Timer {
     // 时间经过
     public void tick() {
 
+
     }
 
     private Timer() {

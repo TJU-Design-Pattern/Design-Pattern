@@ -4,4 +4,5 @@
 package crossfarm.commands;
 
 public class CommandManager {
+
 }

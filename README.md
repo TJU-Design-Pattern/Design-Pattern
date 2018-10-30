@@ -1,1 +1,56 @@
-# Design-Pattern
+Cross Farm
+========
+
+Introduction
+--------
+A farm management framework with some classical design patterns implemented in Java.
+
+Design Patterns
+--------
+**Creational Patterns**
+- [x] Abstract Factory
+- [ ] Builder
+- [x] Factory Method
+- [ ] Prototype
+- [x] Singleton
+
+**Structural Patterns**
+
+- [ ] Adapter
+- [ ] Bridge
+- [ ] Composite
+- [x] Decorator
+- [ ] Facade
+- [x] Flyweight
+- [ ] Proxy
+
+**Behavioral Patterns**
+
+- [x] Chain of Responsibility
+
+- [x] Command
+- [ ] Interpreter
+- [ ] Iterator
+- [x] Mediator
+- [ ] Memento
+- [x] Observer
+- [x] State
+- [x] Strategy
+- [ ] Template Method
+- [ ] Visitor
+
+**Other Patterns**
+- [x] Null Object
+
+Team
+--------
+- 宋天佑 ([@MrNickell](https://github.com/MrNickell/))
+- 张文喆 ([@pancerZH](https://github.com/pancerZH/))
+- 李坤 ([@Moonlor](https://github.com/Moonlor/))
+- 李向真 ([@zhenzhenz](https://github.com/zhenzhenz))
+- 陈泽徽 ([@zehuichen123](https://github.com/DerekDick/))
+- 杨丁豪 ([@DinghowYang](https://github.com/DinghowYang/))
+- 孙韬 ([@wzes](https://github.com/wzes/))
+- 付旭炜 ([@MWish](https://github.com/MWish/))
+- 殷在浩 ([@chloe](https://github.com/chloe/))
+

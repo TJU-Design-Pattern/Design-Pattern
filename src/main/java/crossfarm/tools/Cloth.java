@@ -2,6 +2,7 @@ package crossfarm.tools;
 
 import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
+import crossfarm.cultivation.animals.Cat;
 import crossfarm.decorators.animals.Dressed;
 
 public class Cloth extends BaseTool {

@@ -7,14 +7,20 @@ import crossfarm.cultivation.animals.BaseAnimal;
 
 public class Dressed extends BaseAnimalDecorator {
 
-    private BaseAnimal animal;
-
-    public Dressed(BaseAnimal animal) {
-        this.animal = animal;
+    public Dressed(BaseAnimal animal){
+        super(animal);
     }
+
     public double cost() {
 //      穿了衣服加50元
         return this.animal.cost() + 50;
     }
-    public void tick() { return; }
+
+    public void tick(){
+
+    }
+
+    public void timeChange(int hour) {
+
+    }
 }
