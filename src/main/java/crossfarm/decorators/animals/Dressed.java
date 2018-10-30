@@ -19,7 +19,7 @@ public class Dressed extends BaseAnimalDecorator {
     }
 
     public String getName() {
-        return "0";
+        return animal.getName();
     }
     public BaseCultivation clone() {
         return new Cat();

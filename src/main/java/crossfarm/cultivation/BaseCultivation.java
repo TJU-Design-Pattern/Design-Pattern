@@ -16,6 +16,7 @@ public abstract class BaseCultivation implements Context, CultivationPrototype {
      */
     public boolean isSaled;
     public int experience = 0;
+    public double value = 0;
     public State state = HungryState.getInstance();
     public boolean isMature;
 

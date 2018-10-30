@@ -13,10 +13,11 @@ public class Duck extends BaseAnimal implements CultivationPrototype {
     public Duck() {
         this.soundAdapter = new ChangeSoundAdapter();
         this.isMature = false;
-    }
+        this.value = 1;
+     }
     private ChangeSoundAdapter soundAdapter;
     public double cost() {
-        return 50;
+        return this.value;
     }
     public void tick() { return; }
 

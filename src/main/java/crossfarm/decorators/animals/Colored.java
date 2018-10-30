@@ -1,5 +1,7 @@
 package crossfarm.decorators.animals;
+import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
+import crossfarm.cultivation.animals.Duck;
 
 public class Colored extends BaseAnimalDecorator{
 
@@ -15,5 +17,11 @@ public class Colored extends BaseAnimalDecorator{
 
     public void timeChange(int hour) {
 
+    }
+    public BaseCultivation clone() {
+        return new Duck();
+    }
+    public String getName() {
+        return animal.getName();
     }
 }
