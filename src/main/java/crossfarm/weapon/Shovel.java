@@ -1,4 +1,4 @@
 package crossfarm.weapon;
 
-public class Shovel extends BaseWeapon{
+public abstract class Shovel extends BaseWeapon{
 }
