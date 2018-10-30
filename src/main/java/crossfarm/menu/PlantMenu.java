@@ -54,6 +54,14 @@ public class PlantMenu extends BaseMenu {
         return Plants.size();
     }
 
+    /**
+     * Get a iterator of plant list
+     * @return A iterator
+     */
+    public Iterator iterator(){
+        return new CultivationIterator(this.cultivations);
+    }
+
     public void accept(BaseVisitor visitor){
         visitor.visit(this);
     }

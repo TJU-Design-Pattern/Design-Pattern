@@ -11,6 +11,8 @@ import crossfarm.manager.Farmer;
 import crossfarm.manager.GetMoneyProxy;
 import crossfarm.manager.MoneyGetter;
 import crossfarm.manager.Owner;
+import crossfarm.menu.AnimalMenu;
+import crossfarm.menu.Iterator;
 import crossfarm.tools.ToolPackage;
 import crossfarm.weapon.BaseWeapon;
 
@@ -47,6 +49,13 @@ public class Main
         MoneyGetter moneyGetter = new GetMoneyProxy(owner);
         double money = moneyGetter.getMoney();
         System.out.println("Get " + money);
+        
+        // Iterator test
+        Iterator iterator = Farm.getInstance().animalMenu.iterator();
+        while (iterator.hasNext()){
+            BaseAnimal animal = (BaseAnimal)iterator.next();
+            System.out.println(animal.cost());
+        }
     }
 
 }

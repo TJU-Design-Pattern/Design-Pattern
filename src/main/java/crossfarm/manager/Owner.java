@@ -17,7 +17,7 @@ public class Owner implements MoneyGetter {
 
     /**
      * Get the instance of the owner
-     * @return
+     * @return The instance of the owner
      */
     public static Owner getInstance() {
         Owner temp = instance;
@@ -63,8 +63,8 @@ public class Owner implements MoneyGetter {
 
     /**
      * Find a free farmer and send a purchase command to the farmer
-     * @param kind
-     * @param number
+     * @param kind The kind of animal you want to purchase
+     * @param number The number of animal you want to purchase
      */
     public void purchase(String kind,int number){
         Farmer temp = findFreeFarmer();

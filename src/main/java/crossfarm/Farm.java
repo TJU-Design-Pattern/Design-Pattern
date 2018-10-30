@@ -19,7 +19,7 @@ public class Farm {
     public PlantMenu plantMenu = new PlantMenu();
     public List<Farmer> farmers = new ArrayList<Farmer>();
 
-    public Farm(){
+    private Farm(){
         for(int i = 0; i < 4; i++ )
             farmers.add(new Farmer());
     }
