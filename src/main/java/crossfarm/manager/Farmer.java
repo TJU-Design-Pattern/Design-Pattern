@@ -7,6 +7,7 @@ package crossfarm.manager;
 import crossfarm.Farm;
 import crossfarm.commands.Command;
 import crossfarm.commands.PurchaseCommand;
+import crossfarm.commands.SeedCommand;
 import crossfarm.commands.SellCommand;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
@@ -82,6 +83,17 @@ public class Farmer implements Serializable {
     public void purchase(String kind,int number){
         this.isWorking = true;
         Command cmd = new PurchaseCommand(kind, number);
+        cmd.execute();
+        this.isWorking = false;
+    }
+
+    /**
+     * Seed crops
+     * @param number The number of crop you want to seed
+     */
+    public void seedCrop(int number){
+        this.isWorking = true;
+        Command cmd = new SeedCommand(number);
         cmd.execute();
         this.isWorking = false;
     }

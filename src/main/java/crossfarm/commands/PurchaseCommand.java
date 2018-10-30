@@ -1,6 +1,8 @@
 package crossfarm.commands;
 
 import crossfarm.Farm;
+import crossfarm.cultivation.CultivationModule;
+import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.animals.Duck;
 import crossfarm.manager.Owner;
@@ -17,13 +19,13 @@ public class PurchaseCommand implements Command{
         Farm instance = Farm.getInstance();
         if(kind == "cat") {
             for (int i = 0; i < number; i++) {
-                instance.animalMenu.addAnimal(new Cat(instance.getAnimal_manager()));
+                instance.animalMenu.addAnimal((BaseAnimal) CultivationModule.findAndClone("Cat"));
             }
             Owner.getInstance().editMoney(-1*number);
         }
         else if(kind == "duck"){
             for (int i = 0; i < number; i++) {
-                instance.animalMenu.addAnimal(new Duck(instance.getPlant_manager()));
+                instance.animalMenu.addAnimal((BaseAnimal) CultivationModule.findAndClone("Duck"));
             }
             Owner.getInstance().editMoney(-1*number);
         }
