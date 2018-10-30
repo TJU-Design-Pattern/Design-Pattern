@@ -3,9 +3,13 @@ package crossfarm.cultivation.animals;
 import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
 import crossfarm.decorators.animals.Dressed;
+import crossfarm.farmland.Ranch;
 
 public class Cat extends BaseAnimal {
-    public Cat() {}
+    public Cat() {
+        this.soundMaker = new CatSound();
+        this.isSaled = false;
+    }
     public double cost() {
         return 50;
     }
@@ -20,5 +24,25 @@ public class Cat extends BaseAnimal {
 
         behave(new CatSound());
         behave(new CatEat());
+        c.makeSound();
+        c.isSaled = false;
+       // BaseAnimal animal = new Dressed(c);
+       // System.out.println(animal.cost());
+    }
+
+    public void doSell(){
+        if(this.isSaled){
+            System.out.println("This animal is already saled!");
+        }
+        else{
+            this.isSaled = true;
+            Ranch instance = Ranch.getInstance();
+            instance.catMenu.removeAnimal(this);
+            System.out.println("Sale finished!");
+        }
+    }
+
+    public void tick(){
+
     }
 }

@@ -3,6 +3,8 @@ package crossfarm.cultivation.animals;
 import crossfarm.actions.DuckSound;
 import crossfarm.actions.DuckEat;
 import crossfarm.decorators.animals.Dressed;
+import crossfarm.actions.sound.DuckSound;
+import crossfarm.farmland.Ranch;
 
 public class Duck extends BaseAnimal {
     public Duck() {  }
@@ -20,5 +22,17 @@ public class Duck extends BaseAnimal {
 
         behave(new DuckSound());
         behave(new DuckEat());
+    }
+    
+    public void doSell(){
+        if(this.isSaled){
+            System.out.println("This animal is already saled!");
+        }
+        else{
+            this.isSaled = true;
+            Ranch instance = Ranch.getInstance();
+            instance.duckMenu.removeAnimal(this);
+            System.out.println("Sale finished!");
+        }
     }
 }

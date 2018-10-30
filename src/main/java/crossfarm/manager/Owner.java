@@ -12,4 +12,12 @@ public class Owner {
     public static Owner getInstance(){
         return instance;
     }
+
+    /**
+     * Get the instance of the owner
+     * @return
+     */
+    public static Owner getInstance() {
+
+    }
 }
