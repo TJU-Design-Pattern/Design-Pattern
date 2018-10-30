@@ -6,7 +6,7 @@ public class Starvation {
 
     public String toString() {
         if(_deficiency_money_amount == 0){
-            return "Need food : " + _deficiency_food_amount;
+            return "Lack of food amount" + _deficiency_food_amount + " ";
         } else {
             return "Need $ " + _deficiency_money_amount + " to buy food : " + _deficiency_food_amount;
         }

@@ -49,7 +49,7 @@ public class AnimalManager implements Mediator {
             Iterator<Farmer> farmer_it = _farm.farmers.iterator();
             Iterator<BaseAnimal> starved_animal_it = _starved_animals.iterator();
             int total_appetite_quantity = 0;
-            while (animal_it.hasNext()){
+            while (starved_animal_it.hasNext()){
                 BaseAnimal starved_animal = starved_animal_it.next();
                 total_appetite_quantity += starved_animal.getAppetite();
             }
