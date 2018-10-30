@@ -25,14 +25,15 @@ Design Patterns
 
 **Behavioral Patterns**
 - [] Chain of Responsibility
+
 - [x] Command
 - [ ] Interpreter
 - [ ] Iterator
 - [] Mediator
 - [] Memento
 - [] Observer
-- [ ] State
-- [ ] Strategy
+- [x] State
+- [x] Strategy
 - [] Template Method
 - [] Visitor
 
@@ -42,11 +43,11 @@ Design Patterns
 Team
 --------
 - 宋天佑 ([@MrNickell](https://github.com/MrNickell/))
-- 张文喆 ([@pancerZH](https://github.com/pancerZH/))
+- 张文喆 ([@pancerZH](https://github.com/pancerZH/))
 - 李坤 ([@Moonlor](https://github.com/Moonlor/))
 - 李向真 ([@zhenzhenz](https://github.com/zhenzhenz))
 - 陈泽徽 ([@zehuichen123](https://github.com/DerekDick/))
-- 杨丁豪 ([@DinghowYang](https://github.com/DinghowYang/))
+- 杨丁豪 ([@DinghowYang](https://github.com/DinghowYang/))
 - 孙韬 ([@wzes](https://github.com/wzes/))
 - 付旭炜 ([@MWish](https://github.com/MWish/))
 - 殷在浩 ([@chloe](https://github.com/chloe/))
