@@ -20,12 +20,18 @@ public class Cat extends BaseAnimal {
                 // 猫饿了
                 state.getHungry(this);
             }
+            else {
+                state.gainExperience(this);
+            }
         }
         else {
             if(currentTime - lastSupplyTime > 5) {
                 // 猫饿了
                 state.getHungry(this);
                 System.out.println("猫饿了");
+            }
+            else {
+                state.gainExperience(this);
             }
         }
     }

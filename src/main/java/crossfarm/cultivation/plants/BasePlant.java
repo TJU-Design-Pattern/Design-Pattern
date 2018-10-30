@@ -6,6 +6,7 @@ package crossfarm.cultivation.plants;
 
 import crossfarm.Farm;
 import crossfarm.cultivation.BaseCultivation;
+import crossfarm.state.State;
 
 public abstract class BasePlant extends BaseCultivation {
 
@@ -20,4 +21,6 @@ public abstract class BasePlant extends BaseCultivation {
             System.out.println("Sale finished!");
         }
     }
+    public void changeState(State state) {}
+    public void getFed(int currentTime) {}
 }

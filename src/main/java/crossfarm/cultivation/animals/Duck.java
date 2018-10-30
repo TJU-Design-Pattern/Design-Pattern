@@ -19,11 +19,17 @@ public class Duck extends BaseAnimal {
                 // 鸭子饿了
                 state.getHungry(this);
             }
+            else {
+                state.gainExperience(this);
+            }
         }
         else {
             // 鸭子饿了
             if(currentTime - lastSupplyTime > 2) {
                 state.getHungry(this);
+            }
+            else {
+                state.gainExperience(this);
             }
         }
     }

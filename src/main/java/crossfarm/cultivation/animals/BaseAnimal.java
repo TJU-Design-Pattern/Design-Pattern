@@ -11,11 +11,9 @@ import crossfarm.state.FullState;
 import crossfarm.state.HungryState;
 import crossfarm.state.State;
 
-public abstract class BaseAnimal extends BaseCultivation implements Context {
+public abstract class BaseAnimal extends BaseCultivation{
     MakeSound soundMaker;
-    protected State state = HungryState.getInstance();
     public int lastSupplyTime = 0;
-    public int experience = 0;
 
     public void makeSound() {
         soundMaker.makeSound();

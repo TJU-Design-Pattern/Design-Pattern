@@ -1,6 +1,6 @@
 package crossfarm.state;
 
-import crossfarm.cultivation.animals.BaseAnimal;
+import crossfarm.cultivation.BaseCultivation;
 
 public class HungryState implements State {
     private static HungryState singleton = new HungryState();
@@ -10,5 +10,5 @@ public class HungryState implements State {
         context.changeState(FullState.getInstance());
     }
     public void getHungry(Context context) {}
-    public void gainExperience(BaseAnimal anima) {}
+    public void gainExperience(BaseCultivation animal) {}
 }
