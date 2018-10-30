@@ -15,7 +15,9 @@ public class ToolPackage {
     public ArrayList<ToolPackage> my_bags;
 
     public ToolPackage(){
-        base_tool = null;
+        PackageBuilder packageBuilder = new PackageBuilder();
+        Director director = new Director(packageBuilder);
+        director.constructor(this.base_tool);
     }
 
     public void addTool(BaseTool base_tool){

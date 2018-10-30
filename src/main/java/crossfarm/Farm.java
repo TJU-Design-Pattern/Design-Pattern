@@ -9,10 +9,12 @@ import crossfarm.manager.Owner;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.PlantMenu;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Farm {
+public class Farm implements Serializable {
     private static Farm instance = new Farm();
 
     public AnimalMenu animalMenu = new AnimalMenu();
@@ -43,5 +45,14 @@ public class Farm {
             }
         }
         return temp;
+    }
+
+    public Memento createMemento() {
+        try {
+            return new Memento(this);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

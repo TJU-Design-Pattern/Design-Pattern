@@ -7,10 +7,7 @@ import crossfarm.decorators.animals.Dressed;
 import crossfarm.factories.BaseFactory;
 import crossfarm.factories.BaseWeaponFactory;
 import crossfarm.factories.FactoryProducer;
-import crossfarm.manager.Farmer;
-import crossfarm.manager.GetMoneyProxy;
-import crossfarm.manager.MoneyGetter;
-import crossfarm.manager.Owner;
+import crossfarm.manager.*;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.Iterator;
 import crossfarm.tools.ToolPackage;
@@ -26,6 +23,8 @@ public class Main
     {
         System.out.println( "Hello World!" );
 
+        Farm farm = Farm.getInstance();
+        Memento memento = farm.createMemento();
         // Command test
         Owner owner = Owner.getInstance();
         System.out.println(owner.getMoney());
@@ -38,7 +37,8 @@ public class Main
         Farm.getInstance().animalMenu.getAnimal(0).makeSound();
 
         // Decorator test
-        BaseAnimal cat = new Cat();
+        AnimalManager AM = new AnimalManager();
+        BaseAnimal cat = new Cat(AM);
         BaseAnimal dressed_cat = new Dressed(cat);
         BaseAnimal colored_cat = new Colored(cat);
         System.out.println(cat.cost());
@@ -56,6 +56,8 @@ public class Main
             BaseAnimal animal = (BaseAnimal)iterator.next();
             System.out.println(animal.cost());
         }
+
+        memento.updateState(farm);
     }
 
 }

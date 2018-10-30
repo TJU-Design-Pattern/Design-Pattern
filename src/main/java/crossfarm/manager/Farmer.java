@@ -15,7 +15,9 @@ import crossfarm.farmland.Ranch;
 
 import java.util.Set;
 
-public class Farmer {
+import java.io.Serializable;
+
+public class Farmer implements Serializable {
     //private double money;
     private boolean has_axe;
     private boolean has_shovel;
