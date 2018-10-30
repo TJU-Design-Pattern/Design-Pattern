@@ -29,6 +29,10 @@ public abstract class SolveStarvation {
 
     protected abstract boolean resolve(Starvation starvation);
 
+    public String toString() {
+        return _name;
+    }
+
     protected void done(Starvation starvation){
         System.out.println(starvation + "is solved by " + this);
         _farm.getAnimal_manager().get_starved_animals().clear();
