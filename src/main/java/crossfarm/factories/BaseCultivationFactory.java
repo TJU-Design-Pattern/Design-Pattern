@@ -5,6 +5,7 @@ package crossfarm.factories;
 import crossfarm.farmland.BaseLand;
 import crossfarm.farmland.Field;
 import crossfarm.farmland.Ranch;
+import crossfarm.weapon.BaseWeapon;
 
 public class BaseCultivationFactory extends BaseFactory{
     public Field field;
@@ -13,6 +14,10 @@ public class BaseCultivationFactory extends BaseFactory{
     public BaseCultivationFactory(){
         this.field = null;
         this.ranch = null;
+    }
+
+    public BaseWeapon getWeapon(String weapon_type){
+        return null;
     }
 
     public BaseLand getLand(String land_type){
