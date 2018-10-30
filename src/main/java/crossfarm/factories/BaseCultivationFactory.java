@@ -7,7 +7,9 @@ import crossfarm.farmland.Field;
 import crossfarm.farmland.Ranch;
 import crossfarm.weapon.BaseWeapon;
 
-public class BaseCultivationFactory extends BaseFactory{
+import java.io.Serializable;
+
+public class BaseCultivationFactory extends BaseFactory implements Serializable {
     public Field field;
     public Ranch ranch;
 

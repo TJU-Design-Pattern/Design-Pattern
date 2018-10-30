@@ -3,7 +3,9 @@ package crossfarm.factories;
 import crossfarm.farmland.BaseLand;
 import crossfarm.weapon.*;
 
-public class BaseWeaponFactory extends BaseFactory {
+import java.io.Serializable;
+
+public class BaseWeaponFactory extends BaseFactory implements Serializable {
     public BaseWeapon axe;
     public BaseWeapon shovel;
 
