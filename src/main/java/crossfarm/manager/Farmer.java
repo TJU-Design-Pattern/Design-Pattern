@@ -15,7 +15,9 @@ public class Farmer {
     //private double money;
     private boolean has_axe;
     private boolean has_shovel;
+    private boolean has_sickle;
     private boolean isWorking;
+
 
     // init our only owner
     //private static Farmer instance = new Farmer();
@@ -34,6 +36,14 @@ public class Farmer {
 
     public void setHas_shovel(boolean has_shovel) {
         this.has_shovel = has_shovel;
+    }
+
+    public void setHas_sickle(boolean has_sickle) {
+        this.has_sickle = has_sickle;
+    }
+
+    public boolean freeToReap(){
+        return has_sickle && !isWorking;
     }
 
     /**

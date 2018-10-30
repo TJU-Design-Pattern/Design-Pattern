@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalMenu extends BaseMenu {
+    public List<BaseAnimal> animals;
 
     public AnimalMenu(){
         cultivations = new ArrayList<BaseCultivation>();
