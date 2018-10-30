@@ -24,4 +24,6 @@ public class Dressed extends BaseAnimalDecorator {
     public void tick(){
 
     }
+
+    public void timeChange(int hour) {}
 }

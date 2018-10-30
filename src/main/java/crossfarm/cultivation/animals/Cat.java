@@ -4,6 +4,7 @@ import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
+import crossfarm.state.FullState;
 
 public class Cat extends BaseAnimal {
     public Cat() {
@@ -30,6 +31,14 @@ public class Cat extends BaseAnimal {
         }
     }
 
+    // 喂食重写-猫
+    public void getFed(int currentTime) {
+        this.state = FullState.getInstance();
+        lastSupplyTime = currentTime;
+
+        behave(new CatEat());
+    }
+
     public static void main(String[] args) {
         Cat c = new Cat();
         System.out.println(c.cost());
@@ -38,7 +47,7 @@ public class Cat extends BaseAnimal {
         System.out.println(animal.cost());
 
         behave(new CatSound());
-        behave(new CatEat());
+        c.getFed(10);
     }
 
     public void doSell(){

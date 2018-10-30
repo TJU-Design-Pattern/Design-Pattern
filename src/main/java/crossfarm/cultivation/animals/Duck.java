@@ -4,6 +4,7 @@ import crossfarm.actions.DuckSound;
 import crossfarm.actions.DuckEat;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
+import crossfarm.state.FullState;
 
 public class Duck extends BaseAnimal {
     public Duck() {  }
@@ -25,6 +26,14 @@ public class Duck extends BaseAnimal {
                 state.getHungry(this);
             }
         }
+    }
+
+    // 喂食重写-鸭子
+    public void getFed(int currentTime) {
+        this.state = FullState.getInstance();
+        lastSupplyTime = currentTime;
+
+        behave(new DuckEat());
     }
 
     public static void main(String[] args) {
