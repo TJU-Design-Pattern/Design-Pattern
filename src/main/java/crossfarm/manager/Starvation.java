@@ -1,8 +1,8 @@
 package crossfarm.manager;
 
 public class Starvation {
-    private int _deficiency_food_amount = 0;
-    private int _deficiency_money_amount = 0;
+    public int _deficiency_food_amount = 0;
+    public double _deficiency_money_amount = 0;
 
     public String toString() {
         if(_deficiency_money_amount == 0){

@@ -76,4 +76,15 @@ public class Farmer {
         cmd.execute();
         this.isWorking = false;
     }
+
+    public boolean solveStarvation(FarmerSolveStarvation handler, Starvation starvation){
+        int crop_needed = (int) Math.ceil(starvation._deficiency_food_amount / handler.food_per_crop);
+        if(handler._farm.warehouse > crop_needed){
+            handler._farm.warehouse -= crop_needed;
+            return true;
+        } else {
+            starvation._deficiency_money_amount = (crop_needed - handler._farm.warehouse) * 0.1;
+            return false;
+        }
+    }
 }

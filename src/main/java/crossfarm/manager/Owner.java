@@ -97,4 +97,20 @@ public class Owner implements MoneyGetter {
         animal_menu.accept(visitor);
         plant_menu.accept(visitor);
     }
+
+    public boolean solveStarvation(OwnerSolveStarvation handler, Starvation starvation){
+        int crop_needed = (int) Math.ceil(starvation._deficiency_food_amount / handler.food_per_crop);
+
+        if(this.getMoney() > starvation._deficiency_money_amount){
+            handler._farm.foodCourt += handler._farm.warehouse;
+            handler._farm.warehouse = 0;
+            handler._farm.foodCourt += crop_needed;
+            this.money -= crop_needed * 0.1;
+
+            return true;
+        } else {
+            System.out.println("[Warning] : Bankrupt!");
+            return false;
+        }
+    }
 }

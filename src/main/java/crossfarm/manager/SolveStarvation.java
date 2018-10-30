@@ -1,23 +1,28 @@
 package crossfarm.manager;
 
-public abstract class SolveStarvation {
-    private SolveStarvation next;
-    private String name;
+import crossfarm.Farm;
 
-    public SolveStarvation(String name){
-        this.name = name;
+public abstract class SolveStarvation {
+    public final int food_per_crop = 10;
+    private SolveStarvation _next;
+    private String _name;
+    protected Farm _farm;
+
+    public SolveStarvation(String name, Farm farm){
+        this._name = name;
+        this._farm = farm;
     }
 
     public SolveStarvation setNext(SolveStarvation next){
-        this.next = next;
+        this._next = next;
         return next;
     }
 
     public final void solve(Starvation starvation){
         if(resolve(starvation)){
             done(starvation);
-        } else if (next != null){
-            next.solve(starvation);
+        } else if (_next != null){
+            _next.solve(starvation);
         } else {
             fail(starvation);
         }
