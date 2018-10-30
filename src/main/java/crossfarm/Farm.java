@@ -4,12 +4,16 @@ import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.animals.Duck;
 import crossfarm.cultivation.plants.Crop;
+import crossfarm.factories.BaseFactory;
+import crossfarm.factories.FactoryProducer;
 import crossfarm.manager.AnimalManager;
 import crossfarm.manager.Farmer;
 import crossfarm.manager.Owner;
 import crossfarm.manager.PlantManager;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.PlantMenu;
+import crossfarm.weapon.AddLittleFood;
+import crossfarm.weapon.AddMuchFood;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -23,13 +27,27 @@ public class Farm implements Serializable {
     public PlantMenu plantMenu = new PlantMenu();
     public List<Farmer> farmers = new ArrayList<Farmer>();
 
+    //public FactoryProducer factory_producer;
+    public BaseFactory weapon_factory;
+    public BaseFactory cultivation_factory;
+
     private AnimalManager animal_manager;
     private PlantManager plant_manager;
+
+    public AddLittleFood add_little_food;
+    public AddMuchFood add_much_food;
 
     public int warehouse = 10;  // 初始玩家有10个谷物=100食物
     public int foodCourt = 100;  // 初始食槽有100食物
 
     public Farm(){
+        FactoryProducer factory_producer = new FactoryProducer();
+        weapon_factory = factory_producer.getFactory("Weapon");
+        cultivation_factory = factory_producer.getFactory("Cultivation");
+
+        add_little_food = new AddLittleFood();
+        add_much_food = new AddMuchFood();
+
         for(int i = 0; i < 4; i++ )
             farmers.add(new Farmer());
     }

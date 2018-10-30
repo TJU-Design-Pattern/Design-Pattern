@@ -20,7 +20,8 @@ import java.io.Serializable;
 public class Farmer implements Serializable {
     //private double money;
     private boolean has_axe;
-    private boolean has_shovel;
+    public boolean has_big_shovel;
+    public boolean has_small_shovel;
     private boolean has_sickle;
     private boolean isWorking;
 
@@ -32,7 +33,8 @@ public class Farmer implements Serializable {
         //
         //this.money = 0;
         this.has_axe = false;
-        this.has_shovel = false;
+        this.has_big_shovel = false;
+        this.has_small_shovel = true;
         this.isWorking = false;
     }
 
@@ -40,8 +42,9 @@ public class Farmer implements Serializable {
         this.has_axe = has_axe;
     }
 
-    public void setHas_shovel(boolean has_shovel) {
-        this.has_shovel = has_shovel;
+    public void setHas_big_shovel(boolean has_shovel) {
+        this.has_big_shovel = has_shovel;
+        this.has_small_shovel = false;
     }
 
     public void setHas_sickle(boolean has_sickle) {
@@ -86,7 +89,11 @@ public class Farmer implements Serializable {
     public boolean solveStarvation(FarmerSolveStarvation handler, Starvation starvation){
         int food_needed = starvation._deficiency_food_amount;
         if(handler._farm.warehouse > food_needed){
-            handler._farm.warehouse -= food_needed;
+            if(this.has_small_shovel){
+                handler._farm.add_little_food.AddFood(food_needed);
+            } else {
+                handler._farm.add_much_food.AddFood(food_needed);
+            }
             return true;
         } else {
             starvation._deficiency_money_amount = (food_needed - handler._farm.warehouse) / 10 * 0.1;

@@ -7,6 +7,6 @@ public class Shoveled extends BaseFarmerDecorator{
 
     public Shoveled(Farmer farmer){
         this.farmer = farmer;
-        this.farmer.setHas_shovel(true);
+        this.farmer.setHas_big_shovel(true);
     }
 }

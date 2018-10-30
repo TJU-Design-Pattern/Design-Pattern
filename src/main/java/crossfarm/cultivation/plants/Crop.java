@@ -34,6 +34,7 @@ public class Crop extends BasePlant implements CultivationPrototype {
         state.gainExperience(this);
         if(this.experience >= 72){
             this.isMature = true;
+            setColleagueUpdated();
         }
     }
 

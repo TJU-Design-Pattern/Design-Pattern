@@ -102,9 +102,13 @@ public class Owner implements MoneyGetter {
         int food_needed = starvation._deficiency_food_amount;
 
         if(this.getMoney() > starvation._deficiency_money_amount){
-            handler._farm.foodCourt += handler._farm.warehouse;
-            handler._farm.warehouse = 0;
-            handler._farm.foodCourt += food_needed;
+            Farmer temp_farmer = findFreeFarmer();
+            handler._farm.warehouse += starvation._deficiency_food_amount - handler._farm.warehouse;
+            if(temp_farmer.has_small_shovel){
+                handler._farm.add_little_food.AddFood(food_needed);
+            } else {
+                handler._farm.add_much_food.AddFood(food_needed);
+            }
             this.money -= starvation._deficiency_money_amount;
 
             return true;
