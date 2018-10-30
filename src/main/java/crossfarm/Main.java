@@ -1,5 +1,6 @@
 package crossfarm;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.decorators.animals.Colored;
@@ -39,11 +40,6 @@ public class Main
         System.out.println(Farm.getInstance().animalMenu.size());
         Farm.getInstance().animalMenu.getAnimal(0).makeSound();
 
-        System.out.println("");
-        System.out.println("test for observer");
-
-        System.out.println("end for observer");
-        System.out.println("");
 
         // Decorator test
         BaseAnimal cat = new Cat(farm.getAnimal_manager());
