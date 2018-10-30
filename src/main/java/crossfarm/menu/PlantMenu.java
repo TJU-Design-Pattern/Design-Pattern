@@ -1,6 +1,7 @@
 package crossfarm.menu;
 
 import crossfarm.cultivation.plants.BasePlant;
+import crossfarm.visitor.BaseVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +52,10 @@ public class PlantMenu extends BaseMenu {
      */
     public int size(){
         return Plants.size();
+    }
+
+    public void accept(BaseVisitor visitor){
+        visitor.visit(this);
     }
 
 }

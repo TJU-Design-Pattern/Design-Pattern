@@ -57,8 +57,8 @@ public class AnimalMenu extends BaseMenu {
         return animals.size();
     }
 
-    public void accept(BaseVisitor){
-
+    public void accept(BaseVisitor visitor){
+        visitor.visit(this);
     }
 
 }
