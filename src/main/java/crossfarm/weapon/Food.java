@@ -1,5 +1,5 @@
 package crossfarm.weapon;
 
 public interface Food {
-    void AddFood();
+    void AddFood(int amount);
 }
