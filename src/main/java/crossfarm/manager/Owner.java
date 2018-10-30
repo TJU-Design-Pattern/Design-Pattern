@@ -2,6 +2,9 @@ package crossfarm.manager;
 
 import crossfarm.Farm;
 import crossfarm.cultivation.animals.BaseAnimal;
+import crossfarm.menu.AnimalMenu;
+import crossfarm.menu.PlantMenu;
+import crossfarm.visitor.FarmVisitor;
 
 public class Owner {
     private double money;
@@ -68,5 +71,14 @@ public class Owner {
         if(temp != null){
             temp.purchase(kind, number);
         }
+    }
+
+    public void visitFarm(){
+        Farm global_farm = Farm.getInstance();
+        FarmVisitor visitor = new FarmVisitor();
+        AnimalMenu animal_menu = global_farm.animalMenu;
+        PlantMenu plant_menu = global_farm.plantMenu;
+        animal_menu.accept(visitor);
+        plant_menu.accept(visitor);
     }
 }

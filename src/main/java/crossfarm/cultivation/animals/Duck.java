@@ -6,8 +6,11 @@ import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
 import crossfarm.state.FullState;
 
+
 public class Duck extends BaseAnimal {
-    public Duck() {  }
+    public Duck() {
+        this.isMature = false;
+    }
     public double cost() {
         return 50;
     }
@@ -31,6 +34,9 @@ public class Duck extends BaseAnimal {
             else {
                 state.gainExperience(this);
             }
+        }
+        if(this.experience >= 96){
+            this.isMature = true;
         }
     }
 

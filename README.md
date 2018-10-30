@@ -26,12 +26,12 @@ Design Patterns
 
 **Behavioral Patterns**
 
-- [ ] Chain of Responsibility
+- [x] Chain of Responsibility
 
 - [x] Command
 - [ ] Interpreter
 - [ ] Iterator
-- [ ] Mediator
+- [x] Mediator
 - [ ] Memento
 - [x] Observer
 - [x] State
