@@ -25,7 +25,7 @@ Design Patterns
 
 **Behavioral Patterns**
 - [] Chain of Responsibility
-- [] Command
+- [x] Command
 - [ ] Interpreter
 - [ ] Iterator
 - [] Mediator
