@@ -4,6 +4,7 @@ import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.animals.Duck;
+import crossfarm.visitor.BaseVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,10 @@ public class AnimalMenu extends BaseMenu {
      */
     public int size(){
         return animals.size();
+    }
+
+    public void accept(BaseVisitor){
+
     }
 
 }
