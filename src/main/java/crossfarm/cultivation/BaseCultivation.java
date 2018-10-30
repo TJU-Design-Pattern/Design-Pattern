@@ -16,7 +16,7 @@ public abstract class BaseCultivation implements Context {
      */
     public boolean isSaled;
     public int experience = 0;
-    protected State state = HungryState.getInstance();
+    public State state = HungryState.getInstance();
 
     public abstract double cost();
     public abstract void doSell();
