@@ -6,12 +6,12 @@ import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.PlantMenu;
 import crossfarm.visitor.FarmVisitor;
 
-public class Owner {
+public class Owner implements MoneyGetter {
     private double money;
 
     private static Owner instance = new Owner();
 
-    public Owner(){
+    private Owner(){
         this.money = 1000;
     }
 
