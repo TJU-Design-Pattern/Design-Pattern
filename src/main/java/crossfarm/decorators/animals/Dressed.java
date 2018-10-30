@@ -17,4 +17,6 @@ public class Dressed extends BaseAnimalDecorator {
         return this.animal.cost() + 50;
     }
     public void tick() { return; }
+
+    public void timeChange(int hour) {}
 }
