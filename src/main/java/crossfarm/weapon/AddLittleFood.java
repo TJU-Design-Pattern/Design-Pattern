@@ -2,8 +2,10 @@ package crossfarm.weapon;
 
 import crossfarm.Farm;
 
+import java.io.Serializable;
+
 // 小铲子一次增加2食物
-public class AddLittleFood implements Food{
+public class AddLittleFood implements Food, Serializable {
     public void AddFood(int amount) {
         Farm farm = Farm.getInstance();
         while (amount > 0) {
