@@ -1,5 +1,7 @@
 package crossfarm.menu;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
+import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.animals.Duck;
@@ -9,10 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalMenu extends BaseMenu {
-    private List<BaseAnimal> animals;
 
     public AnimalMenu(){
-        animals = new ArrayList<BaseAnimal>();
+        cultivations = new ArrayList<BaseCultivation>();
     }
 
     /**
@@ -20,7 +21,7 @@ public class AnimalMenu extends BaseMenu {
      * @param animal The animal to be added
      */
     public void addAnimal(BaseAnimal animal){
-        animals.add(animal);
+        cultivations.add(animal);
     }
 
     /**
@@ -29,7 +30,7 @@ public class AnimalMenu extends BaseMenu {
      * @return The animal in the list
      */
     public BaseAnimal getAnimal(int index){
-        return animals.get(index);
+        return (BaseAnimal) cultivations.get(index);
     }
 
     /**
@@ -37,15 +38,14 @@ public class AnimalMenu extends BaseMenu {
      * @param index The index of the animal
      */
     public void removeAnimal(int index){
-        animals.remove(index);
+        cultivations.remove(index);
     }
 
     /**
      * Remove the animal in the animal list
      * @param animal The animal you want to remove
      */
-    public void removeAnimal(BaseAnimal animal){
-        animals.remove(animal);
+    public void removeAnimal(BaseAnimal animal){cultivations.remove(animal);
     }
 
     /**
@@ -53,7 +53,15 @@ public class AnimalMenu extends BaseMenu {
      * @return The size of the group
      */
     public int size(){
-        return animals.size();
+        return cultivations.size();
+    }
+
+    /**
+     * Get a iterator of animal list
+     * @return A iterator
+     */
+    public Iterator iterator(){
+        return new CultivationIterator(this.cultivations);
     }
 
     public void accept(BaseVisitor visitor){

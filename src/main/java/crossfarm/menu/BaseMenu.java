@@ -3,5 +3,10 @@
  */
 package crossfarm.menu;
 
+import crossfarm.cultivation.BaseCultivation;
+
+import java.util.List;
+
 public abstract class BaseMenu {
+    protected List<BaseCultivation> cultivations;
 }

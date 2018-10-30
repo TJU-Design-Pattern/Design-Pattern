@@ -9,6 +9,8 @@ import crossfarm.factories.BaseWeaponFactory;
 import crossfarm.factories.FactoryProducer;
 import crossfarm.manager.Farmer;
 import crossfarm.manager.Owner;
+import crossfarm.menu.AnimalMenu;
+import crossfarm.menu.Iterator;
 import crossfarm.tools.ToolPackage;
 import crossfarm.weapon.BaseWeapon;
 
@@ -39,6 +41,13 @@ public class Main
         System.out.println(cat.cost());
         System.out.println(dressed_cat.cost());
         System.out.println(colored_cat.cost());
+
+        // Iterator test
+        Iterator iterator = Farm.getInstance().animalMenu.iterator();
+        while (iterator.hasNext()){
+            BaseAnimal animal = (BaseAnimal)iterator.next();
+            System.out.println(animal.cost());
+        }
     }
 
 }
