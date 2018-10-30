@@ -11,9 +11,10 @@ public class Cat extends BaseAnimal {
         this.soundMaker = new CatSound();
         this.isSaled = false;
         this.isMature = false;
+        this.value = 1;
     }
     public double cost() {
-        return 50;
+        return this.value;
     }
 
     public void timeChange(int currentTime) {
