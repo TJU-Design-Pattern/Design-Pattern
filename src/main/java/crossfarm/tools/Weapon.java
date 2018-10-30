@@ -8,13 +8,6 @@ import crossfarm.decorators.farmers.Axed;
 import crossfarm.weapon.Axe;
 import crossfarm.weapon.Shovel;
 
-public class Weapon{
-    public BaseFarmerDecorator use(Farmer farmer, BaseWeapon weapon){
-        if(weapon instanceof Axe){
-            return new Axed(farmer);
-        }
-        else{
-            return new Shoveled(farmer);
-        }
-    }
+public class Weapon extends BaseTool{
+
 }

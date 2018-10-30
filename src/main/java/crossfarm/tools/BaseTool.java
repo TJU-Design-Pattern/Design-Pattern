@@ -4,5 +4,4 @@ import crossfarm.cultivation.BaseCultivation;
 
 public abstract class BaseTool {
     // 道具可以使用在动物身上
-    public abstract BaseCultivation use(BaseCultivation cultivation);
 }

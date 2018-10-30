@@ -1,4 +1,18 @@
 package crossfarm.weapon;
 
-public class BaseWeapon {
+import crossfarm.decorators.farmers.Axed;
+import crossfarm.decorators.farmers.BaseFarmerDecorator;
+import crossfarm.decorators.farmers.Shoveled;
+import crossfarm.manager.Farmer;
+import crossfarm.tools.BaseTool;
+
+public class BaseWeapon extends BaseTool {
+    public BaseFarmerDecorator use(Farmer farmer, BaseWeapon weapon){
+        if(weapon instanceof Axe){
+            return new Axed(farmer);
+        }
+        else{
+            return new Shoveled(farmer);
+        }
+    }
 }

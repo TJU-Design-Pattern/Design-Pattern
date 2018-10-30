@@ -3,21 +3,30 @@ package crossfarm.cultivation.animals;
 import crossfarm.actions.DuckSound;
 import crossfarm.actions.ChangeSoundAdapter;
 import crossfarm.actions.DuckEat;
+import crossfarm.cultivation.BaseCultivation;
+import crossfarm.cultivation.CultivationPrototype;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
 import crossfarm.state.FullState;
 
-
-public class Duck extends BaseAnimal {
-    public Duck() { 
+public class Duck extends BaseAnimal implements CultivationPrototype {
+    public Duck() {
         this.soundAdapter = new ChangeSoundAdapter();
         this.isMature = false;
+        this.value = 1;
      }
     private ChangeSoundAdapter soundAdapter;
     public double cost() {
-        return 50;
+        return this.value;
     }
     public void tick() { return; }
+
+    public BaseCultivation clone() {
+        return new Duck();
+    }
+    public String getName() {
+        return "Duck";
+    }
 
     public void timeChange(int currentTime) {
         if(lastSupplyTime > currentTime) {

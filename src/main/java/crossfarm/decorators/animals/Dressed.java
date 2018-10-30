@@ -3,7 +3,9 @@
  */
 package crossfarm.decorators.animals;
 
+import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
+import crossfarm.cultivation.animals.Cat;
 
 public class Dressed extends BaseAnimalDecorator {
 
@@ -14,6 +16,13 @@ public class Dressed extends BaseAnimalDecorator {
     public double cost() {
 //      穿了衣服加50元
         return this.animal.cost() + 50;
+    }
+
+    public String getName() {
+        return animal.getName();
+    }
+    public BaseCultivation clone() {
+        return new Cat();
     }
 
     public void tick(){

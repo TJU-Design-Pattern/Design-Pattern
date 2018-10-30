@@ -1,5 +1,6 @@
 package crossfarm.factories;
 
+import crossfarm.farmland.BaseLand;
 import crossfarm.weapon.BaseWeapon;
 
 import crossfarm.weapon.Axe;
@@ -12,6 +13,10 @@ public class BaseWeaponFactory extends BaseFactory {
     public BaseWeaponFactory(){
         this.axe = null;
         this.showel = null;
+    }
+
+    public BaseLand getLand(String land_type){
+        return null;
     }
 
     public BaseWeapon getWeapon(String weapon_type){

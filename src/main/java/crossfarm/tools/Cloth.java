@@ -16,4 +16,7 @@ public class Cloth extends BaseTool {
         BaseAnimal animal = (BaseAnimal)cultivation;
         return new Dressed(animal);
     }
+    public void print(){
+        System.out.println("fef");
+    }
 }
