@@ -12,7 +12,7 @@ public class Owner {
     private static Owner instance = new Owner();
 
     public Owner(){
-        this.money = 0;
+        this.money = 1000;
     }
 
     /**

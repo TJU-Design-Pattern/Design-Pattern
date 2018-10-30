@@ -5,6 +5,7 @@ import crossfarm.actions.AnimalAction;
 import crossfarm.actions.MakeSound;
 import crossfarm.cultivation.BaseCultivation;
 import crossfarm.farmland.Ranch;
+import crossfarm.manager.Owner;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.state.Context;
 import crossfarm.state.FullState;
@@ -41,6 +42,17 @@ public abstract class BaseAnimal extends BaseCultivation{
         }
         else{
             this.isSaled = true;
+
+            // Judge the case of the animal
+            String name = this.getName();
+            if(name == "Cat"){
+                Owner.getInstance().editMoney(3000);
+            }
+            else if(name == "Duck"){
+                Owner.getInstance().editMoney(5000);
+            }
+
+            // Remove the animal from menu
             Farm instance = Farm.getInstance();
             instance.animalMenu.removeAnimal(this);
             System.out.println("Sale finished!");

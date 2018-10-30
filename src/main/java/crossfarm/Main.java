@@ -18,8 +18,10 @@ public class Main
         System.out.println( "Hello World!" );
 
         // Command test
+        System.out.println(Owner.getInstance().getMoney());
         System.out.println(Farm.getInstance().animalMenu.size());
         Owner.getInstance().purchase("cat",3);
+        System.out.println(Owner.getInstance().getMoney());
         System.out.println(Farm.getInstance().animalMenu.size());
         Owner.getInstance().sell(Farm.getInstance().animalMenu.getAnimal(0));
         System.out.println(Farm.getInstance().animalMenu.size());
