@@ -12,6 +12,21 @@ public class Duck extends BaseAnimal {
     }
     public void tick() { return; }
 
+    public void timeChange(int currentTime) {
+        if(lastSupplyTime > currentTime) {
+            if(currentTime + 24 -lastSupplyTime > 2) {
+                // 鸭子饿了
+                state.getHungry(this);
+            }
+        }
+        else {
+            // 鸭子饿了
+            if(currentTime - lastSupplyTime > 2) {
+                state.getHungry(this);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Duck c = new Duck();
         System.out.println(c.cost());
