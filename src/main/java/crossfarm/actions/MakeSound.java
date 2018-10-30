@@ -4,9 +4,9 @@
  */
 package crossfarm.actions;
 
-public interface MakeSound extends AnimalAction{
+public abstract class MakeSound{
     /**
      * 发出声音
      */
-    void makeSound();
+    public abstract void makeSound();
 }

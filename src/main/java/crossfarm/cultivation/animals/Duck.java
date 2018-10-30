@@ -18,7 +18,10 @@ public class Duck extends BaseAnimal {
         BaseAnimal animal = new Dressed(c);
         System.out.println(animal.cost());
 
-        behave(new DuckSound());
+//        behave(new DuckSound());
+        if( c instanceof  Duck){
+            System.out.println("test");
+        }
         behave(new DuckEat());
     }
 }

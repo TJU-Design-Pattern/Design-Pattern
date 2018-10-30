@@ -4,7 +4,16 @@
  */
 package crossfarm.actions;
 
-public class DuckSound implements MakeSound{
+public class DuckSound {
+    private String string;
+
+    public DuckSound (String string) {
+        this.string = string;
+    }
+
+    public void makeDuckSound() {
+
+    }
 
     public void makeSound() {
         System.out.println("摸了");
