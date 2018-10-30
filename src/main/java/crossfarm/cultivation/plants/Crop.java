@@ -1,6 +1,9 @@
 package crossfarm.cultivation.plants;
 
-public class Crop extends BasePlant{
+import crossfarm.cultivation.BaseCultivation;
+import crossfarm.cultivation.CultivationPrototype;
+
+public class Crop extends BasePlant implements CultivationPrototype {
 
     public Crop(){
 
@@ -11,6 +14,13 @@ public class Crop extends BasePlant{
     }
     public void tick(){
 
+    }
+
+    public BaseCultivation clone() {
+        return new Crop();
+    }
+    public String getName() {
+        return "Crop";
     }
     public void timeChange(int currentTime) {
         state.gainExperience(this);
