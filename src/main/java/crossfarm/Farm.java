@@ -19,6 +19,9 @@ public class Farm {
     public PlantMenu plantMenu = new PlantMenu();
     public List<Farmer> farmers = new ArrayList<Farmer>();
 
+    public int warehouse = 10;  // 初始玩家有10个谷物=100食物
+    public int foodCourt = 100;  // 初始食槽有100食物
+
     public Farm(){
         for(int i = 0; i < 4; i++ )
             farmers.add(new Farmer());
