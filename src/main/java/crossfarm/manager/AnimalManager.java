@@ -2,6 +2,7 @@ package crossfarm.manager;
 
 import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
 import crossfarm.Farm;
+import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.menu.AnimalMenu;
@@ -12,24 +13,26 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class AnimalManager implements Mediator {
+
     private AnimalMenu _animal_menu;
     private Farm _farm;
 
     private Set<BaseAnimal> _starved_animals;
 
-    public AnimalManager() {
+    public AnimalManager(Farm farm) {
         System.out.println("[Init] AnimalManager starts working!");
+        createColleagues(farm);
     }
 
-    public void createColleagues(BaseMenu animal_menu, Farm farm) {
-        this._animal_menu = (AnimalMenu) animal_menu;
+    public void createColleagues(Farm farm) {
+        this._animal_menu = farm.animalMenu;
         this._farm = farm;
     }
 
     public void colleagueChanged() {
-        Iterator<BaseAnimal> animal_it = _animal_menu.animals.iterator();
+        Iterator<BaseCultivation> animal_it = _animal_menu.cultivations.iterator();
         while(animal_it.hasNext()){
-            BaseAnimal animal = animal_it.next();
+            BaseAnimal animal = (BaseAnimal) animal_it.next();
             if(animal.isHungry()){
                 _starved_animals.add(animal);
             }

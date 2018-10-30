@@ -19,7 +19,7 @@ public class Colored extends BaseAnimalDecorator{
 
     }
     public BaseCultivation clone() {
-        return new Duck();
+        return null ;
     }
     public String getName() {
         return animal.getName();

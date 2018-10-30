@@ -17,13 +17,13 @@ public class PurchaseCommand implements Command{
         Farm instance = Farm.getInstance();
         if(kind == "cat") {
             for (int i = 0; i < number; i++) {
-                instance.animalMenu.addAnimal(new Cat());
+                instance.animalMenu.addAnimal(new Cat(instance.getAnimal_manager()));
             }
             Owner.getInstance().editMoney(-1*number);
         }
         else if(kind == "duck"){
             for (int i = 0; i < number; i++) {
-                instance.animalMenu.addAnimal(new Duck());
+                instance.animalMenu.addAnimal(new Duck(instance.getPlant_manager()));
             }
             Owner.getInstance().editMoney(-1*number);
         }

@@ -15,12 +15,13 @@ public class PlantManager implements Mediator{
 
     private Set<BasePlant> _mature_plant;
 
-    public PlantManager() {
+    public PlantManager(Farm farm) {
         System.out.println("[Init] PlantManager starts working!");
+        createColleagues(farm);
     }
 
-    public void createColleagues(BaseMenu plant_menu, Farm farm) {
-        this._plant_menu = (PlantMenu) plant_menu;
+    public void createColleagues(Farm farm) {
+        this._plant_menu = farm.plantMenu;
         this._farm = farm;
     }
 

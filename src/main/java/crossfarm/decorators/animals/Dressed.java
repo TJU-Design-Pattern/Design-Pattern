@@ -22,7 +22,7 @@ public class Dressed extends BaseAnimalDecorator {
         return animal.getName();
     }
     public BaseCultivation clone() {
-        return new Cat();
+        return null;
     }
 
     public void tick(){

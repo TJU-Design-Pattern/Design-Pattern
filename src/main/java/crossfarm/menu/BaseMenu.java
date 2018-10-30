@@ -3,7 +3,11 @@
  */
 package crossfarm.menu;
 
+import crossfarm.cultivation.BaseCultivation;
+
 import java.io.Serializable;
+import java.util.List;
 
 public abstract class BaseMenu implements Serializable {
+    public List<BaseCultivation> cultivations;
 }

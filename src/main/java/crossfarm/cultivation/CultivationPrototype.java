@@ -1,8 +1,12 @@
 package crossfarm.cultivation;
 
+import crossfarm.Farm;
+import crossfarm.Memento;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.animals.Duck;
 import crossfarm.cultivation.plants.Crop;
+import crossfarm.manager.AnimalManager;
+import crossfarm.manager.PlantManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +36,17 @@ class CultivationModule {
     }
 
     public static void initializePrototype() {
-        CultivationModule.addPrototype(new Cat());
-        CultivationModule.addPrototype(new Duck());
-        CultivationModule.addPrototype(new Crop());
+        System.out.println("x");
+
+        Farm farm = Farm.getInstance();
+
+        CultivationModule.addPrototype(new Cat(farm.getAnimal_manager()));
+        CultivationModule.addPrototype(new Duck(farm.getAnimal_manager()));
+        CultivationModule.addPrototype(new Crop(farm.getPlant_manager()));
     }
 
     public static void main(String args[]) {
+
         initializePrototype();
         BaseCultivation[] container = new BaseCultivation[5];
         int total = 0;
