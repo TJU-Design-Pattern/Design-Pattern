@@ -19,7 +19,7 @@ Design Patterns
 - [ ] Adapter
 - [ ] Bridge
 - [ ] Composite
-- [ ] Decorator
+- [x] Decorator
 - [ ] Facade
 - [x] Flyweight
 - [ ] Proxy
