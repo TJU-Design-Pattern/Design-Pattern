@@ -4,6 +4,7 @@ import crossfarm.Farm;
 import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
 import crossfarm.decorators.animals.Dressed;
+import crossfarm.state.FullState;
 
 public class Cat extends BaseAnimal {
     public Cat() {
