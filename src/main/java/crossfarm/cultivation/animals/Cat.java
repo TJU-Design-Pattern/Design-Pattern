@@ -3,6 +3,8 @@ package crossfarm.cultivation.animals;
 import crossfarm.Farm;
 import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
+import crossfarm.cultivation.BaseCultivation;
+import crossfarm.cultivation.CultivationPrototype;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.state.FullState;
 
@@ -14,6 +16,13 @@ public class Cat extends BaseAnimal {
     }
     public double cost() {
         return 50;
+    }
+
+    public BaseCultivation clone() {
+        return new Cat();
+    }
+    public String getName() {
+        return "Cat";
     }
 
     public void timeChange(int currentTime) {
