@@ -7,7 +7,7 @@ package crossfarm.actions;
 public class DuckEat implements MakeEating {
 
     public void makeEating() {
-        System.out.println("鸭子吃了");
+        System.out.println("Duck eats");
     }
 
     public void doAction() { makeEating(); }

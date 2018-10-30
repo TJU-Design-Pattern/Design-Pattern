@@ -43,7 +43,7 @@ public class Cat extends BaseAnimal {
             if(currentTime - lastSupplyTime > 5) {
                 // 猫饿了
                 state.getHungry(this);
-                System.out.println("猫饿了");
+                System.out.println("Cat becomes hungry");
             }
             else {
                 state.gainExperience(this);
