@@ -16,7 +16,7 @@ Design Patterns
 
 **Structural Patterns**
 
-- [ ] Adapter
+- [x] Adapter
 - [ ] Bridge
 - [ ] Composite
 - [ ] Decorator

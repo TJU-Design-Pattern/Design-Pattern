@@ -6,9 +6,10 @@ package crossfarm.cultivation.plants;
 
 import crossfarm.Farm;
 import crossfarm.cultivation.BaseCultivation;
+import crossfarm.manager.Colleague;
 import crossfarm.state.State;
 
-public abstract class BasePlant extends BaseCultivation {
+public abstract class BasePlant extends BaseCultivation implements Colleague{
 
     public void doSell(){
         if(this.isSaled){

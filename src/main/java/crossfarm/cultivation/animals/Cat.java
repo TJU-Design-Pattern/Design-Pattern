@@ -4,13 +4,16 @@ import crossfarm.Farm;
 import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
 import crossfarm.decorators.animals.Dressed;
+import crossfarm.manager.Mediator;
 import crossfarm.state.FullState;
 
 public class Cat extends BaseAnimal {
-    public Cat() {
+    public Cat(Mediator animal_manager) {
         this.soundMaker = new CatSound();
         this.isSaled = false;
         this.isMature = false;
+        this.appetite = 5;
+        this.setMediator(animal_manager);
     }
     public double cost() {
         return 50;
@@ -49,16 +52,16 @@ public class Cat extends BaseAnimal {
         behave(new CatEat());
     }
 
-    public static void main(String[] args) {
-        Cat c = new Cat();
-        System.out.println(c.cost());
-        System.out.println("Now we get a dress for out lovely cat");
-        BaseAnimal animal = new Dressed(c);
-        System.out.println(animal.cost());
-
-        behave(new CatSound());
-        c.getFed(10);
-    }
+//    public static void main(String[] args) {
+//        Cat c = new Cat();
+//        System.out.println(c.cost());
+//        System.out.println("Now we get a dress for out lovely cat");
+//        BaseAnimal animal = new Dressed(c);
+//        System.out.println(animal.cost());
+//
+//        behave(new CatSound());
+//        c.getFed(10);
+//    }
 
     public void tick(){
 

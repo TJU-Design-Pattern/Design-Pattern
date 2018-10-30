@@ -4,12 +4,15 @@ import crossfarm.actions.DuckSound;
 import crossfarm.actions.DuckEat;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
+import crossfarm.manager.Mediator;
 import crossfarm.state.FullState;
 
 
 public class Duck extends BaseAnimal {
-    public Duck() {
+    public Duck(Mediator animal_manager) {
         this.isMature = false;
+        this.appetite = 2;
+        this.setMediator(animal_manager);
     }
     public double cost() {
         return 50;
@@ -48,14 +51,14 @@ public class Duck extends BaseAnimal {
         behave(new DuckEat());
     }
 
-    public static void main(String[] args) {
-        Duck c = new Duck();
-        System.out.println(c.cost());
-        System.out.println("Now we get a dress for our lovely cat");
-        BaseAnimal animal = new Dressed(c);
-        System.out.println(animal.cost());
-
-        behave(new DuckSound());
-        behave(new DuckEat());
-    }
+//    public static void main(String[] args) {
+//        Duck c = new Duck();
+//        System.out.println(c.cost());
+//        System.out.println("Now we get a dress for our lovely cat");
+//        BaseAnimal animal = new Dressed(c);
+//        System.out.println(animal.cost());
+//
+//        behave(new DuckSound());
+//        behave(new DuckEat());
+//    }
 }

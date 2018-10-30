@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalMenu extends BaseMenu {
-    private List<BaseAnimal> animals;
+    public List<BaseAnimal> animals;
 
     public AnimalMenu(){
         animals = new ArrayList<BaseAnimal>();
