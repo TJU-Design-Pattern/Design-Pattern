@@ -7,13 +7,12 @@ import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.decorators.animals.Colored;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.factories.BaseFactory;
-import crossfarm.factories.BaseWeaponFactory;
-import crossfarm.factories.FactoryProducer;
 import crossfarm.manager.*;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.Iterator;
 import crossfarm.menu.PlantMenu;
 import crossfarm.timemachine.AnimalObserver;
+import crossfarm.timemachine.PlantObserver;
 import crossfarm.timemachine.TimeCounter;
 import crossfarm.tools.ToolPackage;
 import crossfarm.weapon.BaseWeapon;
@@ -44,6 +43,8 @@ public class Main
             Farm.getInstance().animalMenu.addAnimal((BaseAnimal) CultivationModule.findAndClone("Duck"));
             Farm.getInstance().plantMenu.addPlant((BasePlant) CultivationModule.findAndClone("Crop"));
         }
+        Farm.getInstance().farmers.get(0).seedCrop(2);
+
         System.out.println(Owner.getInstance().getMoney());
         System.out.println(Farm.getInstance().animalMenu.size());
         Owner.getInstance().sell(Farm.getInstance().animalMenu.getAnimal(0));
@@ -53,9 +54,12 @@ public class Main
         System.out.println("");
         System.out.println("test for observer");
         AnimalMenu animal_menu = Farm.getInstance().animalMenu;
+        PlantMenu plant_menu = Farm.getInstance().plantMenu;
 
         TimeCounter time_counter = new TimeCounter();
         AnimalObserver animal_observer = new AnimalObserver(time_counter);
+        PlantObserver plant_observer = new PlantObserver(time_counter);
+
         for(int i=0;i<10;i++){
             time_counter.updateTime();
         }
