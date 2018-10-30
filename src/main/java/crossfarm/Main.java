@@ -8,6 +8,8 @@ import crossfarm.factories.BaseFactory;
 import crossfarm.factories.BaseWeaponFactory;
 import crossfarm.factories.FactoryProducer;
 import crossfarm.manager.Farmer;
+import crossfarm.manager.GetMoneyProxy;
+import crossfarm.manager.MoneyGetter;
 import crossfarm.manager.Owner;
 import crossfarm.tools.ToolPackage;
 import crossfarm.weapon.BaseWeapon;
@@ -23,7 +25,8 @@ public class Main
         System.out.println( "Hello World!" );
 
         // Command test
-        System.out.println(Owner.getInstance().getMoney());
+        Owner owner = Owner.getInstance();
+        System.out.println(owner.getMoney());
         System.out.println(Farm.getInstance().animalMenu.size());
         Owner.getInstance().purchase("cat",3);
         System.out.println(Owner.getInstance().getMoney());
@@ -39,6 +42,11 @@ public class Main
         System.out.println(cat.cost());
         System.out.println(dressed_cat.cost());
         System.out.println(colored_cat.cost());
+
+        // Static Proxy Test
+        MoneyGetter moneyGetter = new GetMoneyProxy(owner);
+        double money = moneyGetter.getMoney();
+        System.out.println("Get " + money);
     }
 
 }
