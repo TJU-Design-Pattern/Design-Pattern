@@ -13,7 +13,6 @@ public class Cat extends BaseAnimal {
     public double cost() {
         return 50;
     }
-    public void tick() { return; }
 
     public static void main(String[] args) {
         Cat c = new Cat();

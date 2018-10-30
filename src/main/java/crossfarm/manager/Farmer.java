@@ -30,8 +30,9 @@ public class Farmer {
         this.has_axe = has_axe;
     }
 
-    public void setHas_shovel(boolean has_shovel){
+    public void setHas_shovel(boolean has_shovel) {
         this.has_shovel = has_shovel;
+    }
     /**
      * Sell the animal
      * @param animal

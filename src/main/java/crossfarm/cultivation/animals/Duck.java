@@ -3,7 +3,6 @@ package crossfarm.cultivation.animals;
 import crossfarm.actions.DuckSound;
 import crossfarm.actions.DuckEat;
 import crossfarm.decorators.animals.Dressed;
-import crossfarm.actions.sound.DuckSound;
 import crossfarm.farmland.Ranch;
 
 public class Duck extends BaseAnimal {

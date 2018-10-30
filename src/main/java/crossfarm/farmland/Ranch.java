@@ -11,7 +11,7 @@ import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.PlantMenu;
 
 public class Ranch extends BaseLand {
-    private static Ranch instance;
+    private static Ranch instance = new Ranch();
 
     public AnimalMenu<Cat> catMenu;
     public AnimalMenu<Duck> duckMenu;
@@ -43,5 +43,6 @@ public class Ranch extends BaseLand {
             }
         }
         return temp;
+
     }
 }

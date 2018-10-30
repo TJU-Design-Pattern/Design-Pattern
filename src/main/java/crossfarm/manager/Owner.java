@@ -9,15 +9,21 @@ public class Owner {
         this.money = 0;
     }
 
-    public static Owner getInstance(){
-        return instance;
-    }
-
     /**
      * Get the instance of the owner
      * @return
      */
     public static Owner getInstance() {
-
+        Owner temp = instance;
+        if(temp == null){
+            synchronized(Owner.class){
+                temp = instance;
+                if(temp == null){
+                    instance = new Owner();
+                    temp = instance;
+                }
+            }
+        }
+        return temp;
     }
 }
