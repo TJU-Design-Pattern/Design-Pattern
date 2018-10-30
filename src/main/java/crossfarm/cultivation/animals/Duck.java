@@ -41,6 +41,7 @@ public class Duck extends BaseAnimal implements CultivationPrototype {
             if(currentTime + 24 -lastSupplyTime > 2) {
                 // 鸭子饿了
                 state.getHungry(this);
+                System.out.println("Duck becomes hungry");
             }
             else {
                 state.gainExperience(this);
@@ -50,6 +51,7 @@ public class Duck extends BaseAnimal implements CultivationPrototype {
             // 鸭子饿了
             if(currentTime - lastSupplyTime > 2) {
                 state.getHungry(this);
+                System.out.println("Duck becomes hungry");
             }
             else {
                 state.gainExperience(this);
