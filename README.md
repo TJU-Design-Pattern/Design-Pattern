@@ -11,16 +11,16 @@ Design Patterns
 - [x] Abstract Factory
 - [ ] Builder
 - [x] Factory Method
-- [ ] Prototype
+- [x] Prototype
 - [x] Singleton
 
 **Structural Patterns**
 
 - [x] Adapter
 - [ ] Bridge
-- [ ] Composite
-- [ ] Decorator
-- [ ] Facade
+- [x] Composite
+- [x] Decorator
+- [x] Facade
 - [x] Flyweight
 - [ ] Proxy
 
@@ -36,8 +36,8 @@ Design Patterns
 - [x] Observer
 - [x] State
 - [x] Strategy
-- [ ] Template Method
-- [ ] Visitor
+- [x] Template Method
+- [x] Visitor
 
 **Other Patterns**
 - [x] Null Object

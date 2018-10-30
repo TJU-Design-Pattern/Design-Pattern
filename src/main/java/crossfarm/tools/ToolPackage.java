@@ -4,16 +4,26 @@
  */
 package crossfarm.tools;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.cultivation.BaseCultivation;
+import crossfarm.weapon.Axe;
 import crossfarm.weapon.BaseWeapon;
 
 import java.util.ArrayList;
 
-
-///////////>>>>>>>>>>>>>????
 public class ToolPackage {
-    public ArrayList<BaseCultivation> my_tools;
-    public ArrayList<BaseWeapon> my_weapons;
+    public static BaseTool base_tool;
     public ArrayList<ToolPackage> my_bags;
+
+    public ToolPackage(){
+        base_tool = null;
+    }
+
+    public void addTool(BaseTool base_tool){
+        this.base_tool = base_tool;
+    }
+
+    public void addPackage(ToolPackage tool_package){
+        this.my_bags.add(tool_package);
+    }
 }
-///////////////////////////

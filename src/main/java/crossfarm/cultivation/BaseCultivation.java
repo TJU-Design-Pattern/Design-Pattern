@@ -9,18 +9,20 @@ import crossfarm.state.Context;
 import crossfarm.state.HungryState;
 import crossfarm.state.State;
 
-public abstract class BaseCultivation implements Context {
+public abstract class BaseCultivation implements Context, CultivationPrototype {
     /**
      * 这个玩意能卖多少钱
      * @return
      */
     public boolean isSaled;
     public int experience = 0;
+    public double value = 0;
     public State state = HungryState.getInstance();
     public boolean isMature;
 
     public abstract double cost();
     public abstract void doSell();
+    public abstract BaseCultivation clone();
 
     // 时间经过的反应(用 STATE MACHINE 描述时间经过动物会发生啥？
     public abstract void tick();

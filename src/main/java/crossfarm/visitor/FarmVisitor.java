@@ -7,6 +7,7 @@ import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.PlantMenu;
 
 public class FarmVisitor implements BaseVisitor {
+
     public void visit(PlantMenu plant_menu) {
         int plant_size = plant_menu.size();
         for(int i=0; i<plant_size; i++){

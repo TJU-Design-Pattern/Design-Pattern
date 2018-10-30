@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Duck",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "crossfarm.cultivation.animals.Duck",
+            "args": "",
+            "projectName": "cross-farm"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Cat",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "crossfarm.cultivation.animals.Cat",
+            "args": "",
+            "projectName": "cross-farm"
+        }
+    ]
+}
