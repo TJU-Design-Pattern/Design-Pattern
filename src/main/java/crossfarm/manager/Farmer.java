@@ -4,12 +4,16 @@
  */
 package crossfarm.manager;
 
+import crossfarm.Farm;
 import crossfarm.commands.Command;
 import crossfarm.commands.PurchaseCommand;
 import crossfarm.commands.SellCommand;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
+import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.farmland.Ranch;
+
+import java.util.Set;
 
 public class Farmer {
     //private double money;
@@ -78,13 +82,19 @@ public class Farmer {
     }
 
     public boolean solveStarvation(FarmerSolveStarvation handler, Starvation starvation){
-        int crop_needed = (int) Math.ceil(starvation._deficiency_food_amount / handler.food_per_crop);
-        if(handler._farm.warehouse > crop_needed){
-            handler._farm.warehouse -= crop_needed;
+        int food_needed = starvation._deficiency_food_amount;
+        if(handler._farm.warehouse > food_needed){
+            handler._farm.warehouse -= food_needed;
             return true;
         } else {
-            starvation._deficiency_money_amount = (crop_needed - handler._farm.warehouse) * 0.1;
+            starvation._deficiency_money_amount = (food_needed - handler._farm.warehouse) / 10 * 0.1;
             return false;
         }
+    }
+
+    public void reapCrops(Set<BasePlant> crops, Farm farm){
+        farm.foodCourt += crops.size() * 10;
+        farm.plantMenu.Plants.removeAll(crops);
+        crops.clear();
     }
 }

@@ -44,10 +44,11 @@ public class AnimalManager implements Mediator {
                 total_appetite_quantity += starved_animal.getAppetite();
             }
 
+            Farmer free_farmer = null;
             while(farmer_it.hasNext()){
                 Farmer farmer = farmer_it.next();
                 if (!farmer.getWorkStatus()){
-
+                    free_farmer = farmer;
                     break;
                 }
                 //
@@ -55,6 +56,19 @@ public class AnimalManager implements Mediator {
                 //      [2]通知农民添加足量食物
                 //
             }
+            if(free_farmer != null){
+                SolveStarvation farmer_solve = new FarmerSolveStarvation(this._farm, free_farmer);
+                SolveStarvation owner_solve = new OwnerSolveStarvation(this._farm);
+
+                Starvation starvation = new Starvation();
+                starvation._deficiency_food_amount = total_appetite_quantity;
+                farmer_solve.setNext(owner_solve);
+                farmer_solve.solve(starvation);
+            } else {
+                System.out.println("No free farmer available to feed animals !");
+            }
+
+
         }
     }
 

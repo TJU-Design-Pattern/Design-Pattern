@@ -3,7 +3,6 @@ package crossfarm.manager;
 import crossfarm.Farm;
 
 public abstract class SolveStarvation {
-    public final int food_per_crop = 10;
     private SolveStarvation _next;
     private String _name;
     protected Farm _farm;

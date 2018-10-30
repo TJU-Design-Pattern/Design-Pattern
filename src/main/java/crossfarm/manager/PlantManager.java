@@ -31,20 +31,14 @@ public class PlantManager implements Mediator{
             if (plant.isMature){
                 _mature_plant.add(plant);
             }
-            //
-            //      检查作物状态
-            //
         }
         if(_mature_plant.size() > 5){
             Iterator<Farmer> farmer_it = _farm.farmers.iterator();
             while (farmer_it.hasNext()){
                 Farmer farmer = farmer_it.next();
                 if(farmer.freeToReap()){
-
+                    farmer.reapCrops(_mature_plant, this._farm);
                 }
-                //
-                //      通知农民收割作物并放入谷仓
-                //
             }
         }
     }

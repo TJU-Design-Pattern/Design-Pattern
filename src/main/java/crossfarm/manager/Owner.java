@@ -99,13 +99,13 @@ public class Owner implements MoneyGetter {
     }
 
     public boolean solveStarvation(OwnerSolveStarvation handler, Starvation starvation){
-        int crop_needed = (int) Math.ceil(starvation._deficiency_food_amount / handler.food_per_crop);
+        int food_needed = starvation._deficiency_food_amount;
 
         if(this.getMoney() > starvation._deficiency_money_amount){
             handler._farm.foodCourt += handler._farm.warehouse;
             handler._farm.warehouse = 0;
-            handler._farm.foodCourt += crop_needed;
-            this.money -= crop_needed * 0.1;
+            handler._farm.foodCourt += food_needed;
+            this.money -= starvation._deficiency_money_amount;
 
             return true;
         } else {
