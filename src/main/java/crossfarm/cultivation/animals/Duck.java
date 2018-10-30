@@ -1,6 +1,7 @@
 package crossfarm.cultivation.animals;
 
 import crossfarm.actions.DuckSound;
+import crossfarm.actions.ChangeSoundAdapter;
 import crossfarm.actions.DuckEat;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
@@ -8,9 +9,11 @@ import crossfarm.state.FullState;
 
 
 public class Duck extends BaseAnimal {
-    public Duck() {
+    public Duck() { 
+        this.soundAdapter = new ChangeSoundAdapter();
         this.isMature = false;
-    }
+     }
+    private ChangeSoundAdapter soundAdapter;
     public double cost() {
         return 50;
     }
@@ -54,8 +57,7 @@ public class Duck extends BaseAnimal {
         System.out.println("Now we get a dress for our lovely cat");
         BaseAnimal animal = new Dressed(c);
         System.out.println(animal.cost());
-
-        behave(new DuckSound());
+        c.soundAdapter.doAction();
         behave(new DuckEat());
     }
 }
