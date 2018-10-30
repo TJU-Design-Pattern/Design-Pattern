@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlantMenu extends BaseMenu {
-    private List<BasePlant> Plants;
+    public List<BasePlant> Plants;
 
     public PlantMenu(){
         Plants = new ArrayList<BasePlant>();

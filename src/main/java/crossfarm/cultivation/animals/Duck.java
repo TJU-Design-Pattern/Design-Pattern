@@ -7,23 +7,31 @@ import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.CultivationPrototype;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.farmland.Ranch;
+import crossfarm.manager.Mediator;
 import crossfarm.state.FullState;
 
+
 public class Duck extends BaseAnimal implements CultivationPrototype {
-    public Duck() {
+    public Duck(Mediator animal_manager) {
         this.soundAdapter = new ChangeSoundAdapter();
         this.isMature = false;
         this.value = 1;
-     }
+        this.appetite = 2;
+        this.setMediator(animal_manager);
+    }
+
     private ChangeSoundAdapter soundAdapter;
+
     public double cost() {
         return this.value;
     }
+
     public void tick() { return; }
 
     public BaseCultivation clone() {
-        return new Duck();
+        return new Duck(this._animal_manager);
     }
+
     public String getName() {
         return "Duck";
     }
@@ -60,13 +68,15 @@ public class Duck extends BaseAnimal implements CultivationPrototype {
         behave(new DuckEat());
     }
 
-    public static void main(String[] args) {
-        Duck c = new Duck();
-        System.out.println(c.cost());
-        System.out.println("Now we get a dress for our lovely cat");
-        BaseAnimal animal = new Dressed(c);
-        System.out.println(animal.cost());
-        c.soundAdapter.doAction();
-        behave(new DuckEat());
-    }
+//    public static void main(String[] args) {
+//        Duck c = new Duck();
+//        System.out.println(c.cost());
+//        System.out.println("Now we get a dress for our lovely cat");
+//        BaseAnimal animal = new Dressed(c);
+//        System.out.println(animal.cost());
+//
+//        behave(new DuckSound());
+//        behave(new DuckEat());
+//    }
+
 }

@@ -2,7 +2,6 @@ package crossfarm.menu;
 
 import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
-import sun.jvm.hotspot.debugger.cdbg.BaseClass;
 
 import java.util.List;
 

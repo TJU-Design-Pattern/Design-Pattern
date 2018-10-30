@@ -1,6 +1,5 @@
 package crossfarm.menu;
 
-import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
@@ -11,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalMenu extends BaseMenu {
+    public List<BaseAnimal> animals;
 
     public AnimalMenu(){
         cultivations = new ArrayList<BaseCultivation>();
