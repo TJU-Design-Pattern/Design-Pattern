@@ -1,18 +1,15 @@
 package crossfarm.factories;
 
 import crossfarm.farmland.BaseLand;
-import crossfarm.weapon.BaseWeapon;
-
-import crossfarm.weapon.Axe;
-import crossfarm.weapon.Shovel;
+import crossfarm.weapon.*;
 
 public class BaseWeaponFactory extends BaseFactory {
     public BaseWeapon axe;
-    public BaseWeapon showel;
+    public BaseWeapon shovel;
 
     public BaseWeaponFactory(){
         this.axe = null;
-        this.showel = null;
+        this.shovel = null;
     }
 
     public BaseLand getLand(String land_type){
@@ -32,15 +29,24 @@ public class BaseWeaponFactory extends BaseFactory {
                 return this.axe;
             }
         }
-        else if(weapon_type.equalsIgnoreCase("Shovel")){
-            if(this.showel == null){
-                this.showel = new Shovel();
-                return this.showel;
+        else if(weapon_type.equalsIgnoreCase("BigShovel")){
+            if(this.shovel == null){
+                this.shovel = new BigShovel();
+                return this.shovel;
             }
             else{
-                return this.showel;
+                return this.shovel;
+            }
+        }
+        else if(weapon_type.equalsIgnoreCase("SmallShovel")){
+            if(this.shovel == null){
+                this.shovel = new SmallShovel();
+                return this.shovel;
+            }
+            else{
+                return this.shovel;
             }
         }
         return null;
-    };
+    }
 }

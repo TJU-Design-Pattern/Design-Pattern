@@ -1,6 +1,5 @@
 package crossfarm.menu;
 
-import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
