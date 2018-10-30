@@ -1,8 +1,9 @@
 package crossfarm;
 
-import com.sun.xml.internal.rngom.parse.host.Base;
+import crossfarm.cultivation.CultivationModule;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
+import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.decorators.animals.Colored;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.factories.BaseFactory;
@@ -17,6 +18,8 @@ import crossfarm.timemachine.TimeCounter;
 import crossfarm.tools.ToolPackage;
 import crossfarm.weapon.BaseWeapon;
 
+import static crossfarm.cultivation.CultivationModule.initializePrototype;
+
 /**
  * Hello world!
  *
@@ -29,6 +32,7 @@ public class Main
 
         Farm farm = Farm.getInstance();
         Memento memento = farm.createMemento();
+        initializePrototype();
 
 
         // Command test
@@ -36,6 +40,10 @@ public class Main
         System.out.println(owner.getMoney());
         System.out.println(Farm.getInstance().animalMenu.size());
         Owner.getInstance().purchase("cat",3);
+        for(int i=0; i<6; i++) {
+            Farm.getInstance().animalMenu.addAnimal((BaseAnimal) CultivationModule.findAndClone("Duck"));
+            Farm.getInstance().plantMenu.addPlant((BasePlant) CultivationModule.findAndClone("Crop"));
+        }
         System.out.println(Owner.getInstance().getMoney());
         System.out.println(Farm.getInstance().animalMenu.size());
         Owner.getInstance().sell(Farm.getInstance().animalMenu.getAnimal(0));
