@@ -16,6 +16,8 @@ import crossfarm.timemachine.AnimalObserver;
 import crossfarm.timemachine.PlantObserver;
 import crossfarm.timemachine.TimeCounter;
 import crossfarm.tools.ToolPackage;
+import crossfarm.visitor.BaseVisitor;
+import crossfarm.visitor.FarmVisitor;
 import crossfarm.weapon.BaseWeapon;
 
 import static crossfarm.cultivation.CultivationModule.initializePrototype;
@@ -59,7 +61,6 @@ public class Main
 
 
 
-
         // Observer test
         System.out.println("");
         System.out.println("========= test for observer ========");
@@ -74,6 +75,15 @@ public class Main
             time_counter.updateTime();
         }
         System.out.println("========== end for observer ========");
+        System.out.println("");
+
+        //Visitor test
+        System.out.println("");
+        System.out.println("======== test for visitor ========");
+        BaseVisitor farm_visitor = new FarmVisitor();
+        animal_menu.accept(farm_visitor);
+        plant_menu.accept(farm_visitor);
+        System.out.println("======== end for visitor =========");
         System.out.println("");
 
         // Toolpackage test
