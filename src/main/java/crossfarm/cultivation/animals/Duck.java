@@ -20,11 +20,7 @@ public class Duck extends BaseAnimal implements CultivationPrototype {
         this.setMediator(animal_manager);
     }
 
-    private ChangeSoundAdapter soundAdapter;
 
-    public void changeAdapter(String sound){
-        this.soundAdapter = new ChangeSoundAdapter(sound);
-    }
 
     public double cost() {
         return this.value;

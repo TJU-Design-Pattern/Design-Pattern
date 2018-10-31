@@ -3,6 +3,7 @@ package crossfarm.cultivation.animals;
 import crossfarm.Farm;
 import crossfarm.actions.CatSound;
 import crossfarm.actions.CatEat;
+import crossfarm.actions.ChangeSoundAdapter;
 import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.CultivationPrototype;
 import crossfarm.decorators.animals.Dressed;
@@ -10,7 +11,9 @@ import crossfarm.manager.Mediator;
 import crossfarm.state.FullState;
 
 public class Cat extends BaseAnimal {
+
     public Cat(Mediator animal_manager) {
+        this.soundAdapter = new ChangeSoundAdapter("呀呀呀呀");
         this.soundMaker = new CatSound();
         this.isSaled = false;
         this.isMature = false;
@@ -21,6 +24,7 @@ public class Cat extends BaseAnimal {
     public double cost() {
         return this.value;
     }
+
 
     public BaseCultivation clone() {
         return new Cat(this._animal_manager);
