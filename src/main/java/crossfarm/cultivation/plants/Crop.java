@@ -4,6 +4,7 @@ import crossfarm.cultivation.BaseCultivation;
 import crossfarm.cultivation.CultivationPrototype;
 import crossfarm.manager.Mediator;
 import crossfarm.manager.PlantManager;
+import crossfarm.state.CropState;
 
 import javax.print.attribute.standard.MediaPrintableArea;
 
@@ -12,6 +13,7 @@ public class Crop extends BasePlant implements CultivationPrototype {
     public Crop(PlantManager plant_manager){
         this.isMature = false;
         this._plant_manager = plant_manager;
+        this.state = CropState.getInstance();
         this.setMediator(plant_manager);
     }
 
