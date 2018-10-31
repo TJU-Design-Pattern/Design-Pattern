@@ -25,7 +25,7 @@ public abstract class BaseAnimal extends BaseCultivation implements Colleague{
         soundMaker.makeSound();
     }
 
-    public static void behave(AnimalAction action) { action.doAction(); }
+    public void behave(AnimalAction action) { action.doAction(); }
 
     // 改变状态
     public void changeState(State state) {
