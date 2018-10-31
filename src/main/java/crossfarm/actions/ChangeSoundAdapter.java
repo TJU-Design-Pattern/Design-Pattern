@@ -5,8 +5,12 @@
 package crossfarm.actions;
 
 public class ChangeSoundAdapter extends DuckSound implements MakeSound{
+    private String sound;
+    public ChangeSoundAdapter(String sound){
+        this.sound = sound;
+    }
     public void makeSound(){
-        System.out.println("gun ya");
+        System.out.println(sound);
     }
 
 }

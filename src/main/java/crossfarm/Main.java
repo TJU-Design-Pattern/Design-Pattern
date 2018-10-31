@@ -3,6 +3,7 @@ package crossfarm;
 import crossfarm.cultivation.CultivationModule;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
+import crossfarm.cultivation.animals.Duck;
 import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.decorators.animals.Colored;
 import crossfarm.decorators.animals.Dressed;

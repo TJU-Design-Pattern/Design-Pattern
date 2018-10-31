@@ -13,7 +13,7 @@ import crossfarm.state.FullState;
 
 public class Duck extends BaseAnimal implements CultivationPrototype {
     public Duck(Mediator animal_manager) {
-        this.soundAdapter = new ChangeSoundAdapter();
+        this.soundAdapter = new ChangeSoundAdapter("呀呀呀呀");
         this.isMature = false;
         this.value = 1;
         this.appetite = 2;
@@ -21,6 +21,10 @@ public class Duck extends BaseAnimal implements CultivationPrototype {
     }
 
     private ChangeSoundAdapter soundAdapter;
+
+    public void changeAdapter(String sound){
+        this.soundAdapter = new ChangeSoundAdapter(sound);
+    }
 
     public double cost() {
         return this.value;
