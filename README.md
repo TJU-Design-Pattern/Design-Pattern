@@ -53,4 +53,5 @@ Team
 - 孙韬 ([@wzes](https://github.com/wzes/))
 - 付旭炜 ([@MWish](https://github.com/MWish/))
 - 殷在浩 ([@chloe](https://github.com/chloe/))
+- 奇巴图 ([@lde3cimi](https://github.com/lde3cimi/))
 
