@@ -58,7 +58,7 @@ public class Main
         Owner owner = Owner.getInstance();
         System.out.println("The owner's money: " + owner.getMoney());
         System.out.println("The number of animals before purchase: " + Farm.getInstance().animalMenu.size());
-        Owner.getInstance().purchase("cat",3);
+        Owner.getInstance().purchase("cat",8);
         Farm.getInstance().farmers.get(0).seedCrop(2);
         System.out.println("The owner's money after purchase cat&crop: " + owner.getMoney());
         System.out.println("The number of animals after purchase: " + Farm.getInstance().animalMenu.size());
