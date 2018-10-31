@@ -7,7 +7,7 @@ package crossfarm.actions;
 public class CatSound  implements MakeSound{
 
     public void makeSound() {
-        System.out.println("滚啊");
+        System.out.println("喵喵喵");
     }
 
     public void doAction() { makeSound(); }

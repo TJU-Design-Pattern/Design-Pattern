@@ -12,6 +12,11 @@ import java.util.ArrayList;
 
 public class PackageBuilder extends Builder {
     public void makeBaseTool(BaseTool baseTool){
+        System.out.println("");
+        System.out.println("======== test for Builder ========");
         baseTool = null;
+        System.out.println("Succeed in building baseTool");
+        System.out.println("======== end for Builder ========");
+        System.out.println("");
     }
 }
