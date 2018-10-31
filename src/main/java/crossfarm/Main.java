@@ -1,5 +1,6 @@
 package crossfarm;
 
+import crossfarm.actions.DuckSound;
 import crossfarm.cultivation.CultivationModule;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
@@ -16,6 +17,8 @@ import crossfarm.timemachine.AnimalObserver;
 import crossfarm.timemachine.PlantObserver;
 import crossfarm.timemachine.TimeCounter;
 import crossfarm.tools.ToolPackage;
+import crossfarm.visitor.BaseVisitor;
+import crossfarm.visitor.FarmVisitor;
 import crossfarm.weapon.BaseWeapon;
 
 import static crossfarm.cultivation.CultivationModule.initializePrototype;
@@ -32,8 +35,22 @@ public class Main
 
         Farm farm = Farm.getInstance();
         Memento memento = farm.createMemento();
-        initializePrototype();
 
+        // Prototype test
+        System.out.println("");
+        System.out.println("======== test for prototype ========");
+        initializePrototype();
+        Duck duck = (Duck) CultivationModule.findAndClone("Duck");
+        System.out.println("I am a " + duck.getName());
+        System.out.println("========= end for prototype ========");
+        System.out.println("");
+
+        // Strategy test
+        System.out.println("");
+        System.out.println("======== test for strategy ========");
+        duck.behave(new DuckSound());
+        System.out.println("========= end for strategy ========");
+        System.out.println("");
 
         // Command test
         System.out.println("");
@@ -60,7 +77,6 @@ public class Main
 
 
 
-
         // Observer test
         System.out.println("");
         System.out.println("========= test for observer ========");
@@ -75,6 +91,15 @@ public class Main
             time_counter.updateTime();
         }
         System.out.println("========== end for observer ========");
+        System.out.println("");
+
+        //Visitor test
+        System.out.println("");
+        System.out.println("======== test for visitor ========");
+        BaseVisitor farm_visitor = new FarmVisitor();
+        animal_menu.accept(farm_visitor);
+        plant_menu.accept(farm_visitor);
+        System.out.println("======== end for visitor =========");
         System.out.println("");
 
         // Toolpackage test

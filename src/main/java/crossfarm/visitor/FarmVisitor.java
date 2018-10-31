@@ -12,7 +12,7 @@ public class FarmVisitor implements BaseVisitor {
         int plant_size = plant_menu.size();
         for(int i=0; i<plant_size; i++){
             BaseCultivation plant = plant_menu.getPlant(i);
-            System.out.println("the experience of plant is"+plant.experience);
+            System.out.println("the experience of plant " + i +" is "+plant.experience);
         }
     }
 
@@ -20,7 +20,7 @@ public class FarmVisitor implements BaseVisitor {
         int animal_size = animal_menu.size();
         for(int i=0; i<animal_size; i++){
             BaseAnimal animal = animal_menu.getAnimal(i);
-            System.out.println("the cost of animal is "+animal.experience);
+            System.out.println("the experience of animal " +i +" is "+animal.experience);
         }
     }
 }
