@@ -1,8 +1,10 @@
 package crossfarm;
 
+import crossfarm.actions.DuckSound;
 import crossfarm.cultivation.CultivationModule;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
+import crossfarm.cultivation.animals.Duck;
 import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.decorators.animals.Colored;
 import crossfarm.decorators.animals.Dressed;
@@ -31,8 +33,22 @@ public class Main
 
         Farm farm = Farm.getInstance();
         Memento memento = farm.createMemento();
-        initializePrototype();
 
+        // Prototype test
+        System.out.println("");
+        System.out.println("======== test for prototype ========");
+        initializePrototype();
+        Duck duck = (Duck) CultivationModule.findAndClone("Duck");
+        System.out.println("I am a " + duck.getName());
+        System.out.println("========= end for prototype ========");
+        System.out.println("");
+
+        // Strategy test
+        System.out.println("");
+        System.out.println("======== test for strategy ========");
+        duck.behave(new DuckSound());
+        System.out.println("========= end for strategy ========");
+        System.out.println("");
 
         // Command test
         System.out.println("");
