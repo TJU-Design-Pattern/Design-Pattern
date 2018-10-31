@@ -4,6 +4,7 @@
  */
 package crossfarm.manager;
 
+import com.apple.eawt.AppEvent;
 import crossfarm.Farm;
 import crossfarm.commands.Command;
 import crossfarm.commands.PurchaseCommand;
@@ -116,6 +117,7 @@ public class Farmer implements Serializable {
     public void reapCrops(Set<BasePlant> crops, Farm farm){
         farm.foodCourt += crops.size() * 10;
         farm.plantMenu.Plants.removeAll(crops);
+        System.out.println("Farmer[ " + this + " ] reaps " + crops.size() + " crops");
         crops.clear();
     }
 }
