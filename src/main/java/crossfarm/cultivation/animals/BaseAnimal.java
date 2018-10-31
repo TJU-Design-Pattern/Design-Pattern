@@ -2,6 +2,7 @@ package crossfarm.cultivation.animals;
 
 import crossfarm.Farm;
 import crossfarm.actions.AnimalAction;
+import crossfarm.actions.ChangeSoundAdapter;
 import crossfarm.actions.MakeSound;
 import crossfarm.cultivation.BaseCultivation;
 import crossfarm.farmland.Ranch;
@@ -17,6 +18,7 @@ import crossfarm.state.State;
 
 public abstract class BaseAnimal extends BaseCultivation implements Colleague{
     MakeSound soundMaker;
+    public ChangeSoundAdapter soundAdapter;
     protected AnimalManager _animal_manager;
     public int lastSupplyTime = 0;
     public int appetite = 0;
@@ -33,6 +35,10 @@ public abstract class BaseAnimal extends BaseCultivation implements Colleague{
         if(isHungry()){
             setColleagueUpdated();
         }
+    }
+
+    public void changeAdapter(String sound){
+        this.soundAdapter = new ChangeSoundAdapter(sound);
     }
 
     // 喂食

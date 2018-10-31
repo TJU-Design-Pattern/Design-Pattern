@@ -53,7 +53,8 @@ public class Main
         // Adapter test
         System.out.println("");
         System.out.println("======== test for adapter ========");
-        Farm.getInstance().animalMenu.getAnimal(0).makeSound();
+        Farm.getInstance().animalMenu.getAnimal(0).changeAdapter("哇卡卡卡卡");
+        Farm.getInstance().animalMenu.getAnimal(0).soundAdapter.makeSound();
         System.out.println("========= end for adapter ========");
         System.out.println("");
 
