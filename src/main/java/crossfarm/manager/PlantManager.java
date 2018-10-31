@@ -1,14 +1,12 @@
 package crossfarm.manager;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.Farm;
 import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.menu.BaseMenu;
 import crossfarm.menu.PlantMenu;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class PlantManager implements Mediator{
     private PlantMenu _plant_menu;
@@ -18,7 +16,6 @@ public class PlantManager implements Mediator{
 
     public PlantManager(Farm farm) {
         _mature_plant = new HashSet<BasePlant>();
-        System.out.println("[Init] PlantManager starts working!");
         createColleagues(farm);
     }
 
@@ -41,6 +38,7 @@ public class PlantManager implements Mediator{
                 Farmer farmer = farmer_it.next();
                 if(farmer.freeToReap()){
                     farmer.reapCrops(_mature_plant, this._farm);
+                    break;
                 }
             }
         }

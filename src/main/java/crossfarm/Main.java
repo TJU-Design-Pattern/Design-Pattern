@@ -59,7 +59,7 @@ public class Main
         System.out.println("The owner's money: " + owner.getMoney());
         System.out.println("The number of animals before purchase: " + Farm.getInstance().animalMenu.size());
         Owner.getInstance().purchase("cat",8);
-        Farm.getInstance().farmers.get(0).seedCrop(2);
+        Farm.getInstance().farmers.get(0).seedCrop(15);
         System.out.println("The owner's money after purchase cat&crop: " + owner.getMoney());
         System.out.println("The number of animals after purchase: " + Farm.getInstance().animalMenu.size());
         Owner.getInstance().sell(Farm.getInstance().animalMenu.getAnimal(0));
@@ -87,7 +87,7 @@ public class Main
         AnimalObserver animal_observer = new AnimalObserver(time_counter);
         PlantObserver plant_observer = new PlantObserver(time_counter);
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<150;i++){
             time_counter.updateTime();
         }
         System.out.println("========== end for observer ========");

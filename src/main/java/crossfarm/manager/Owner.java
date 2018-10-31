@@ -67,6 +67,10 @@ public class Owner implements MoneyGetter {
      * @param number The number of animal you want to purchase
      */
     public void purchase(String kind,int number){
+        if(Owner.getInstance().getMoney() <=0 ){
+            System.out.println("Warning! Bankrupt!");
+            return;
+        }
         Farmer temp = findFreeFarmer();
         if(temp != null){
             temp.purchase(kind, number);

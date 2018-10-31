@@ -37,7 +37,7 @@ public class Farm implements Serializable {
     public AddLittleFood add_little_food;
     public AddMuchFood add_much_food;
 
-    public int warehouse = 10;  // 初始玩家有10个谷物=100食物
+    public int warehouse = 200;  // 初始玩家有200食物
     public int foodCourt = 100;  // 初始食槽有100食物
 
     public Farm(){

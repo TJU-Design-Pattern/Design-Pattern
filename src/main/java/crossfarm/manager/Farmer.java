@@ -38,6 +38,7 @@ public class Farmer implements Serializable {
         this.has_big_shovel = false;
         this.has_small_shovel = true;
         this.isWorking = false;
+        this.has_sickle = true;
     }
 
     public void setHas_axe(boolean has_axe) {
@@ -101,7 +102,7 @@ public class Farmer implements Serializable {
 
     public boolean solveStarvation(FarmerSolveStarvation handler, Starvation starvation){
         int food_needed = starvation._deficiency_food_amount;
-        if(handler._farm.warehouse > food_needed){
+        if(handler._farm.warehouse >= food_needed){
             if(this.has_small_shovel){
                 handler._farm.add_little_food.AddFood(food_needed);
             } else {
