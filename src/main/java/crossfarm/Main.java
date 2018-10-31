@@ -57,12 +57,6 @@ public class Main
         System.out.println("");
 
 
-        // Adapter test
-        System.out.println("");
-        System.out.println("======== test for adapter ========");
-        Farm.getInstance().animalMenu.getAnimal(0).makeSound();
-        System.out.println("========= end for adapter ========");
-        System.out.println("");
 
 
         // Observer test
