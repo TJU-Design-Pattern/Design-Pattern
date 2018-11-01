@@ -18,6 +18,9 @@ public class PlantObserver extends Observer{
         PlantMenu plant_menu = global_farm.plantMenu;
         int plant_size = plant_menu.size();
         for(int i=0;i<plant_size;i++){
+            if(plant_menu.size() != plant_size){
+                break;
+            }
             BasePlant plant = plant_menu.getPlant(i);
             plant.timeChange(this.time_counter.current_time);
         }

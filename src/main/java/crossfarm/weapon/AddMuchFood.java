@@ -13,6 +13,7 @@ public class AddMuchFood implements Food, Serializable {
             int per = amount >= 5 ? 5 : amount;
             farm.foodCourt += per;
             amount -= per;
+            farm.warehouse -= per;
             System.out.println("添加食物：5，食槽中食物总量：" + farm.foodCourt);
         }
     }

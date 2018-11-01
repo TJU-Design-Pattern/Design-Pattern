@@ -39,8 +39,6 @@ Design Patterns
 - [x] Template Method
 - [x] Visitor
 
-**Other Patterns**
-- [x] Null Object
 
 Team
 --------
@@ -50,8 +48,8 @@ Team
 - 李向真 ([@zhenzhenz](https://github.com/zhenzhenz))
 - 陈泽徽 ([@zehuichen123](https://github.com/DerekDick/))
 - 杨丁豪 ([@DinghowYang](https://github.com/DinghowYang/))
-- 孙韬 ([@wzes](https://github.com/wzes/))
+- 孙韬 ([@suniique](https://github.com/suniique))
 - 付旭炜 ([@MWish](https://github.com/MWish/))
-- 殷在浩 ([@chloe](https://github.com/chloe/))
+- 殷在浩 ([@chloeyin](https://github.com/chloe/))
 - 奇巴图 ([@lde3cimi](https://github.com/lde3cimi/))
 

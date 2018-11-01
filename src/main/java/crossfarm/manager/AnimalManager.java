@@ -18,7 +18,7 @@ public class AnimalManager implements Mediator {
     private AnimalMenu _animal_menu;
     private Farm _farm;
 
-    private Set<BaseAnimal> _starved_animals;
+    private HashSet<BaseAnimal> _starved_animals;
 
     public AnimalManager(Farm farm) {
         _starved_animals = new HashSet<BaseAnimal>();
@@ -39,7 +39,6 @@ public class AnimalManager implements Mediator {
         Iterator<BaseCultivation> animal_it = _animal_menu.cultivations.iterator();
         while(animal_it.hasNext()){
             BaseAnimal animal = (BaseAnimal) animal_it.next();
-
             if(animal.isHungry()){
                 _starved_animals.add(animal);
             }

@@ -27,6 +27,9 @@ public class PlantMenu extends BaseMenu {
      * @return The Plant in the list
      */
     public BasePlant getPlant(int index){
+//        if(index > Plants.size() - 1){
+//            return Plants.get(Plants.size() - 1);
+//        }
         return Plants.get(index);
     }
 

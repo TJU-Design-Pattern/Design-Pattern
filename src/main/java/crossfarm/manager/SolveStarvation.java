@@ -30,7 +30,7 @@ public abstract class SolveStarvation {
     protected abstract boolean resolve(Starvation starvation);
 
     public String toString() {
-        return _name;
+        return this._name;
     }
 
     protected void done(Starvation starvation){

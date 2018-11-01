@@ -5,10 +5,7 @@ import crossfarm.cultivation.plants.BasePlant;
 import crossfarm.menu.BaseMenu;
 import crossfarm.menu.PlantMenu;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class PlantManager implements Mediator{
     private PlantMenu _plant_menu;
@@ -41,6 +38,7 @@ public class PlantManager implements Mediator{
                 Farmer farmer = farmer_it.next();
                 if(farmer.freeToReap()){
                     farmer.reapCrops(_mature_plant, this._farm);
+                    break;
                 }
             }
         }

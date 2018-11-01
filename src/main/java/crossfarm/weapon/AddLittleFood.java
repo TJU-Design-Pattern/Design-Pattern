@@ -12,6 +12,7 @@ public class AddLittleFood implements Food, Serializable {
             int per = amount >= 2 ? 2 : amount;
             farm.foodCourt += per;
             amount -= per;
+            farm.warehouse -= per;
             System.out.println("添加食物：2，食槽中食物总量：" + farm.foodCourt);
         }
     }
