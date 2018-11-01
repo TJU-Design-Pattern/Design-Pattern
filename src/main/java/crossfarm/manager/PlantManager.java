@@ -15,6 +15,7 @@ public class PlantManager implements Mediator{
 
     public PlantManager(Farm farm) {
         _mature_plant = new HashSet<BasePlant>();
+        System.out.println("[Init] PlantManager starts working!");
         createColleagues(farm);
     }
 
