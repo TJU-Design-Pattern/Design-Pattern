@@ -17,7 +17,7 @@ public class PlantObserver extends Observer{
     }
 
     public void update(){
-        System.out.println("Time at" + this.time_counter.current_time + " :check cultivation observer");
+        System.out.println("Time at " + this.time_counter.current_time + " :check cultivation observer");
         Farm global_farm = getInstance();
         PlantMenu plant_menu = global_farm.plantMenu;
 

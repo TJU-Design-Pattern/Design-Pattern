@@ -16,7 +16,7 @@ public class AnimalObserver extends Observer{
     }
     @Override
     public void update() {
-        System.out.println("Time at" + this.time_counter.current_time + " :check animal observer");
+        System.out.println("Time at " + this.time_counter.current_time + " :check animal observer");
         Farm global_farm = getInstance();
         AnimalMenu animal_menu = global_farm.animalMenu;
         AnimalMenu sec_animal_menu = animal_menu;

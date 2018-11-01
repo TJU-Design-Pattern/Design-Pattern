@@ -1,5 +1,6 @@
 package crossfarm;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import crossfarm.actions.DuckSound;
 import crossfarm.cultivation.CultivationModule;
 import crossfarm.cultivation.animals.BaseAnimal;
@@ -8,6 +9,7 @@ import crossfarm.cultivation.animals.Duck;
 import crossfarm.decorators.animals.Colored;
 import crossfarm.decorators.animals.Dressed;
 import crossfarm.factories.BaseFactory;
+import crossfarm.farmland.BaseLand;
 import crossfarm.manager.*;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.Iterator;
@@ -19,6 +21,8 @@ import crossfarm.tools.ToolPackage;
 import crossfarm.visitor.BaseVisitor;
 import crossfarm.visitor.FarmVisitor;
 import crossfarm.weapon.BaseWeapon;
+
+import java.awt.peer.SystemTrayPeer;
 
 import static crossfarm.cultivation.CultivationModule.initializePrototype;
 
@@ -92,7 +96,7 @@ public class Main
         System.out.println("========== end for observer ========");
         System.out.println("");
 
-        //Visitor test
+        // Visitor test
         System.out.println("");
         System.out.println("======== test for visitor ========");
         BaseVisitor farm_visitor = new FarmVisitor();
@@ -101,7 +105,7 @@ public class Main
         System.out.println("======== end for visitor =========");
         System.out.println("");
 
-        // Toolpackage test
+        // Toolpackage & Builder test
         System.out.println("");
         System.out.println("========== test for toolPackage ========");
         ToolPackage tool_package = new ToolPackage();
@@ -112,6 +116,18 @@ public class Main
         tool_package.addPackage(second_tool_package);
         System.out.println("========= end for toolpackage ==========");
         System.out.println("");
+
+        // Abstract Factory & FlyWeight test
+        System.out.println("");
+        System.out.println("========== test for factory ============");
+        BaseFactory cultivation_factory = Farm.getInstance().cultivation_factory;
+        BaseLand ranch = cultivation_factory.getLand("Ranch");
+        BaseLand field = cultivation_factory.getLand("Field");
+
+        BaseWeapon axe_1 = weapon_factory.getWeapon("Axe");
+        BaseWeapon big_shovel = weapon_factory.getWeapon("BigShovel");
+        BaseWeapon small_shovel = weapon_factory.getWeapon("SmallShovel");
+        System.out.println("========== end for decorator ===========");
 
         // Decorator test
         System.out.println("");
