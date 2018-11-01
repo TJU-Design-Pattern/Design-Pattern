@@ -7,13 +7,17 @@ import crossfarm.cultivation.CultivationModule;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.plants.BasePlant;
+import crossfarm.factories.BaseFactory;
+import crossfarm.farmland.BaseLand;
 import crossfarm.menu.AnimalMenu;
 import crossfarm.menu.PlantMenu;
 import crossfarm.timemachine.AnimalObserver;
 import crossfarm.timemachine.PlantObserver;
 import crossfarm.timemachine.TimeCounter;
+import crossfarm.tools.ToolPackage;
 import crossfarm.visitor.BaseVisitor;
 import crossfarm.visitor.FarmVisitor;
+import crossfarm.weapon.BaseWeapon;
 
 import static crossfarm.cultivation.CultivationModule.initializePrototype;
 
@@ -85,6 +89,29 @@ public class Test {
 
         System.out.println("");
 
+        // 测试组合模式和建造者模式
+        System.out.println("");
+        System.out.println("现在开始测试组合模式和建造者模式");
+        ToolPackage tool_package = new ToolPackage();
+
+        BaseFactory weapon_factory = Farm.getInstance().weapon_factory;
+        BaseWeapon big_shovel = weapon_factory.getWeapon("BigShovel");
+        tool_package.addTool(big_shovel);
+
+        ToolPackage second_tool_package = new ToolPackage();
+        tool_package.addPackage(second_tool_package);
+        System.out.println("");
+
+        // 测试抽象工厂模式和享元模式
+        System.out.println("");
+        System.out.println("现在开始测试抽象工厂模式和享元模式");
+        BaseFactory cultivation_factory = Farm.getInstance().cultivation_factory;
+        BaseLand ranch = cultivation_factory.getLand("Ranch");
+        BaseLand field = cultivation_factory.getLand("Field");
+
+        BaseWeapon axe = weapon_factory.getWeapon("Axe");
+        BaseWeapon big_shovel_1 = weapon_factory.getWeapon("BigShovel");
+        BaseWeapon small_shovel = weapon_factory.getWeapon("SmallShovel");
 
     }
 }
