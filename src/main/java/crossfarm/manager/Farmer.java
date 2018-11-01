@@ -4,16 +4,13 @@
  */
 package crossfarm.manager;
 
-import com.apple.eawt.AppEvent;
 import crossfarm.Farm;
 import crossfarm.commands.Command;
 import crossfarm.commands.PurchaseCommand;
 import crossfarm.commands.SeedCommand;
 import crossfarm.commands.SellCommand;
 import crossfarm.cultivation.animals.BaseAnimal;
-import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.plants.BasePlant;
-import crossfarm.farmland.Ranch;
 
 import java.util.Set;
 
