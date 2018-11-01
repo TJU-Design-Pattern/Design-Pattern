@@ -35,4 +35,8 @@ public class CultivationIterator implements Iterator{
         index++;
         return next;
     }
+
+    public void setIndex(int index){
+        this.index = index;
+    }
 }
