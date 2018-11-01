@@ -32,10 +32,23 @@ public class Test {
 
         // 测试策略模式
         System.out.println("");
-        System.out.println("现在开始测试策略模式");
+        System.out.println("现在开始测试策略模式:");
         System.out.println("我是一只" + cat.getName());
         cat.behave(new CatSound());  // 测试猫叫
         cat.behave(new DuckSound());  // 测试猫学鸭子叫
         ((BaseAnimal) culti).behave(new DuckSound());
+
+        // 测试适配器模式
+        System.out.println("");
+        System.out.println("现在开始测试适配器模式:");
+        System.out.println("我是一只"+ cat.getName());
+        System.out.println("我原来发出的声音是:");
+        cat.behave(new CatSound());  // 测试猫叫
+        System.out.println("我经过适配后发出的声音是:");
+        cat.changeAdapter("哇卡卡卡卡");
+        cat.soundAdapter.makeSound();
+
+
+
     }
 }
