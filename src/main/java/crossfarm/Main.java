@@ -132,10 +132,11 @@ public class Main
         // Decorator test
         System.out.println("");
         System.out.println("========= test for decorator ========");
-        BaseAnimal cat = new Cat(farm.getAnimal_manager());
-        BaseAnimal dressed_cat = new Dressed(cat);
-        BaseAnimal colored_cat = new Colored(cat);
-        System.out.println("The cat cost: " + cat.cost());
+        BaseAnimal cat1 = Farm.getInstance().animalMenu.getAnimal(0);
+        BaseAnimal cat2 = Farm.getInstance().animalMenu.getAnimal(1);
+        BaseAnimal dressed_cat = new Dressed(cat1);
+        BaseAnimal colored_cat = new Colored(cat2);
+        System.out.println("The cat cost: " + cat1.cost());
         System.out.println("The dressed cat cost: " + dressed_cat.cost());
         System.out.println("The colored cat cost: " + colored_cat.cost());
         System.out.println("========= end for decorator ==========");
