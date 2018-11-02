@@ -7,9 +7,13 @@ import crossfarm.cultivation.CultivationModule;
 import crossfarm.cultivation.animals.BaseAnimal;
 import crossfarm.cultivation.animals.Cat;
 import crossfarm.cultivation.plants.BasePlant;
+import crossfarm.decorators.animals.Colored;
+import crossfarm.decorators.animals.Dressed;
 import crossfarm.factories.BaseFactory;
 import crossfarm.farmland.BaseLand;
+import crossfarm.manager.Owner;
 import crossfarm.menu.AnimalMenu;
+import crossfarm.menu.Iterator;
 import crossfarm.menu.PlantMenu;
 import crossfarm.timemachine.AnimalObserver;
 import crossfarm.timemachine.PlantObserver;
@@ -48,6 +52,21 @@ public class Test {
         cat.behave(new CatSound());  // 测试猫叫
         cat.behave(new DuckSound());  // 测试猫学鸭子叫
         ((BaseAnimal) culti).behave(new DuckSound());
+
+        // 测试命令模式和外观模式
+        System.out.println("");
+        System.out.println("现在开始测试命令模式：");
+        Owner owner = Owner.getInstance();
+        System.out.println("农场主当前的金钱为：" + owner.getMoney());
+        System.out.println("执行购买操作之前的动物数量： " + Farm.getInstance().animalMenu.size());
+        System.out.println("购买了8只猫，和15株作物");
+        Owner.getInstance().purchase("cat",8);
+        Farm.getInstance().farmers.get(0).seedCrop(15);
+        System.out.println("在购买作物和动物之后农场主的金钱为： " + owner.getMoney());
+        System.out.println("购买猫后动物的总数量为： " + Farm.getInstance().animalMenu.size());
+        System.out.println("卖掉1只动物");
+        Owner.getInstance().sell(Farm.getInstance().animalMenu.getAnimal(0));
+        System.out.println("卖掉之后动物的数量为：" + Farm.getInstance().animalMenu.size());
 
         // 测试适配器模式
         System.out.println("");
@@ -113,5 +132,26 @@ public class Test {
         BaseWeapon big_shovel_1 = weapon_factory.getWeapon("BigShovel");
         BaseWeapon small_shovel = weapon_factory.getWeapon("SmallShovel");
 
+        // 测试装饰模式
+        System.out.println("");
+        System.out.println("现在开始测试装饰模式");
+        System.out.println("创建一只猫，并对其进行穿衣和上色操作");
+        BaseAnimal test_cat = new Cat(farm.getAnimal_manager());
+        BaseAnimal dressed_cat = new Dressed(test_cat);
+        BaseAnimal colored_cat = new Colored(test_cat);
+        System.out.println("猫的价值是：" + test_cat.cost());
+        System.out.println("穿衣后的猫的价值是：" + dressed_cat.cost());
+        System.out.println("染色后的猫的价值是：" + colored_cat.cost());
+
+        // 测试迭代器模式
+        System.out.println("");
+        System.out.println("现在开始测试迭代器模式");
+        System.out.println("创建动物清单的一个迭代器，并对动物清单进行遍历：");
+        Iterator iterator = Farm.getInstance().animalMenu.iterator();
+        int count = 1;
+        while (iterator.hasNext()){
+            BaseAnimal test_animal = (BaseAnimal)iterator.next();
+            System.out.println("Animal" + count + "costs: "+ test_animal.cost());
+        }
     }
 }

@@ -55,7 +55,7 @@ public class Main
         System.out.println("========= end for strategy ========");
         System.out.println("");
 
-        // Command test
+        // Command and Facade test
         System.out.println("");
         System.out.println("======== test for command ========");
         Owner owner = Owner.getInstance();
