@@ -125,9 +125,11 @@ public class Test {
         System.out.println("");
         System.out.println("现在开始测试抽象工厂模式和享元模式");
         BaseFactory cultivation_factory = Farm.getInstance().cultivation_factory;
+        System.out.println("从Factory获取土地");
         BaseLand ranch = cultivation_factory.getLand("Ranch");
         BaseLand field = cultivation_factory.getLand("Field");
 
+        System.out.println("从Factory获取装备");
         BaseWeapon axe = weapon_factory.getWeapon("Axe");
         BaseWeapon big_shovel_1 = weapon_factory.getWeapon("BigShovel");
         BaseWeapon small_shovel = weapon_factory.getWeapon("SmallShovel");

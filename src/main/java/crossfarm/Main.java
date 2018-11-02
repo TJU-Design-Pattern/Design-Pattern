@@ -121,13 +121,15 @@ public class Main
         System.out.println("");
         System.out.println("========== test for factory ============");
         BaseFactory cultivation_factory = Farm.getInstance().cultivation_factory;
+        System.out.println("Get land from factory");
         BaseLand ranch = cultivation_factory.getLand("Ranch");
         BaseLand field = cultivation_factory.getLand("Field");
 
+        System.out.println("Get weapon from factory");
         BaseWeapon axe_1 = weapon_factory.getWeapon("Axe");
         BaseWeapon big_shovel = weapon_factory.getWeapon("BigShovel");
         BaseWeapon small_shovel = weapon_factory.getWeapon("SmallShovel");
-        System.out.println("========== end for decorator ===========");
+        System.out.println("========== end for factory ===========");
 
         // Decorator test
         System.out.println("");
