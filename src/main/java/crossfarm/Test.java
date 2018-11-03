@@ -31,7 +31,7 @@ public class Test {
 
         // 初始化
         Farm farm = Farm.getInstance();
-        Memento memento = farm.createMemento();
+
 
         // 测试原型模式
         System.out.println("");
@@ -155,5 +155,16 @@ public class Test {
             BaseAnimal test_animal = (BaseAnimal)iterator.next();
             System.out.println("Animal" + count + "costs: "+ test_animal.cost());
         }
+
+        System.out.println();
+        System.out.println("现在开始测试备忘录模式");
+        Memento memento = Farm.getInstance().createMemento();
+        System.out.println("创建了一份备忘录");
+        System.out.println("foddCourd 原本是" + Farm.getInstance().foodCourt + "现在令其自减");
+        farm.foodCourt--;
+        System.out.println("foddCourd 现在是" + Farm.getInstance().foodCourt );
+        Farm.getInstance().resumeMemento(memento);
+        System.out.println("foddCourd 现在是" + Farm.getInstance().foodCourt + "，已经恢复。");
+
     }
 }

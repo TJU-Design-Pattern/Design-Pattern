@@ -10,16 +10,13 @@ public class Memento {
         this.memento_state = toString(farm);
     }
 
-    void updateState(Farm farm) {
+    Farm updateState(Farm farm) {
         if (memento_state == null) {
             throw new RuntimeException("memento_state is empty");
         }
         try {
             Farm state_farm = (Farm) fromString(memento_state);
-            Farm farm_instance = Farm.getInstance();
-            farm_instance.animalMenu = state_farm.animalMenu;
-            farm_instance.farmers = state_farm.farmers;
-            farm_instance.plantMenu = state_farm.plantMenu;
+            return state_farm;
         } catch (ClassNotFoundException | IOException e) {
             throw new RuntimeException(e);
         }

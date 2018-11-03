@@ -9,7 +9,9 @@ import crossfarm.state.Context;
 import crossfarm.state.HungryState;
 import crossfarm.state.State;
 
-public abstract class BaseCultivation implements Context, CultivationPrototype {
+import java.io.Serializable;
+
+public abstract class BaseCultivation implements Context, CultivationPrototype, Serializable {
     /**
      * 这个玩意能卖多少钱
      * @return

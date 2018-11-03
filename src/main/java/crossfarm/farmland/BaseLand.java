@@ -4,7 +4,9 @@
  */
 package crossfarm.farmland;
 
-public abstract class BaseLand {
+import java.io.Serializable;
+
+public abstract class BaseLand implements Serializable {
     // 通过 clone 来复制对象
     protected abstract BaseLand clone();
 }

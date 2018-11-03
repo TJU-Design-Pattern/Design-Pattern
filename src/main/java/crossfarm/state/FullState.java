@@ -2,7 +2,9 @@ package crossfarm.state;
 
 import crossfarm.cultivation.BaseCultivation;
 
-public class FullState implements State {
+import java.io.Serializable;
+
+public class FullState implements State, Serializable {
     private static FullState singleton = new FullState();
     private FullState() {}
     public static State getInstance() { return singleton; }

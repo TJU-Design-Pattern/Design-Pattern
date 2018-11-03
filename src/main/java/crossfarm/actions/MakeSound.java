@@ -4,7 +4,9 @@
  */
 package crossfarm.actions;
 
-public abstract interface MakeSound extends AnimalAction{
+import java.io.Serializable;
+
+public abstract interface MakeSound extends AnimalAction, Serializable {
     /**
      * 发出声音
      */

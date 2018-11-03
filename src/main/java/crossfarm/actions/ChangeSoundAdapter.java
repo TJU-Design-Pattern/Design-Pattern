@@ -4,7 +4,9 @@
  */
 package crossfarm.actions;
 
-public class ChangeSoundAdapter extends DuckSound implements MakeSound{
+import java.io.Serializable;
+
+public class ChangeSoundAdapter extends DuckSound implements MakeSound, Serializable {
     private String sound;
     public ChangeSoundAdapter(String sound){
         this.sound = sound;

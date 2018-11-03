@@ -92,4 +92,24 @@ public class Farm implements Serializable {
         }
 
     }
+
+    public void resumeMemento(Memento memento) {
+        Farm farm = memento.updateState(this);
+        Farm oldinstance = instance;
+        synchronized (Farm.class) {
+            instance = farm;
+            oldinstance.foodCourt = farm.foodCourt;
+            oldinstance.plantMenu = farm.plantMenu;
+            oldinstance.farmers = farm.farmers;
+            oldinstance.animalMenu = farm.animalMenu;
+            oldinstance.warehouse = farm.warehouse;
+            oldinstance.add_little_food = farm.add_little_food;
+            oldinstance.add_much_food = farm.add_much_food;
+            oldinstance.cultivation_factory = farm.cultivation_factory;
+            oldinstance.weapon_factory = farm.weapon_factory;
+            oldinstance.animal_manager = farm.animal_manager;
+            oldinstance.plant_manager = farm.plant_manager;
+        }
+
+    }
 }
